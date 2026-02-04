@@ -1,0 +1,126 @@
+.post-content pt{
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-bottom: 1em;
+    text-indent: 1.5em;
+  }
+  #excerpt{
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-bottom: 1em;
+    text-indent: 1.5em; 
+  }
+
+  .post-content em {
+    font-style: italic;
+    color: #D93B6A;
+  }
+  
+  .post-content strong {
+    font-weight: bold;
+    color: #ff6600;
+    background: #fff2d0;
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+  }
+
+  .post-content ul,
+.post-content ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.post-content ul {
+    list-style: none;
+}
+
+.post-content li {
+  margin-bottom: 0.5em;
+  position: relative;
+  
+}
+
+.post-content ul li::before {
+  content: "➤";
+  color: #0068ff;
+  position: absolute;
+  left: -1.5em;
+}
+
+.post-content hr {
+    border: none;
+    height: 2px;
+    background: repeating-linear-gradient(
+      45deg,
+      #ffcccc,
+      #ffcccc 10px,
+      #fff 10px,
+      #fff 20px
+    );
+    margin: 2em 0;
+  }
+
+  .post-content img {
+    max-width: 100%;
+    border: 8px dashed #e8ffb1;
+    padding: 0.5em;
+    background: #fcfaf5;
+    display: block;
+    margin: 1em auto;
+    border-radius: 8px;
+  }
+
+  .post-content blockquote {
+    border-left: 4px solid #ffd0d0;
+    background: #fcfaf5;
+    padding: 0.8em 1em;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: #c70067;
+    position: relative;
+  }
+  
+  .post-content blockquote::before {
+    content: "“";
+    font-size: 2rem;
+    position: absolute;
+    left: 10px;
+    top: 0;
+  }
+  
+  .post-content code {
+    background-color: #272822;
+    color: white;
+    font-family: "Courier New", monospace;
+    padding: 0.25rem;
+  }
+  .post-content pre {
+
+    font-family: "Courier New", monospace;
+  }
+  
+  .post-content table {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+    margin: 1.5em 0;
+    font-size: 0.95rem;
+    background-color: #ffff66;
+  }
+  
+  .post-content th,
+  .post-content td {
+    border: 2px dashed #f2b5d4;  /* 内部虚线边框，可换布丁色！ */
+    padding: 0.6em 0.9em;
+    text-align: left;
+  }
+  
+  .post-content th {
+    background-color: #f37a02; /* 淡粉标题行 */
+    color: #160098;
+  }
+  
+  .post-content tr:nth-child(even) td {
+    background-color: #4af6c3; /* 条纹效果 */
+  }
+  

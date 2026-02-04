@@ -52,7 +52,7 @@ html, body {
   }
   
   a {
-    color: #ffc5c5;
+    color: #ffa5a5;
     text-decoration: none;
     border-bottom: 1px dashed #99dddd;
     transition: all 0.2s ease;
@@ -84,6 +84,7 @@ html, body {
     font-size: 0.95em;
     border-top: #e1e100 2px solid;
     border-bottom: #08aa98 2px solid;
+    z-index: 2;
   }
   
   .sidebar a {
@@ -103,7 +104,7 @@ html, body {
 
   main {
     flex: 1;
-    background: #ffffffcc;
+    background:#e8ffb1;
     padding: 2em;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
   }
@@ -137,5 +138,7 @@ html, body {
     padding-top: 1.5em;
     font-size: 1em;
     color: #666;
+
+    
   }
   

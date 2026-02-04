@@ -100,10 +100,12 @@ title: Blog
         <li>
           <div class="post">
             <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+            
             <small>
               {{ post.date | date("yyyy-MM-dd") }}
             </small>
           </br>
+          <div class="post-content">
           <p>
             <div id="excerpt">{{ post.data.page.excerpt }}
             &nbsp;
@@ -112,6 +114,7 @@ title: Blog
                    <span class="block-line"><span><span style="color:#ff6500">R</span><span style="color:#002dff">e</span><span style="color:#ff004b">a</span><span style="color:#9400D3">d&nbsp;</span></span><span><span style="color:#00aaff">m</span><span style="color:#ff00c4">o</span><span style="color:#9400D3">r</span><span style="color:#FF7F00">e</span><span style="color:#ff004e">.</span><span style="color:#00d6ff">.</span><span style="color:#00ff98">.</span></span></span>
                 </a>
               </span>
+              </div>
             </div>
           </p>
         </br>

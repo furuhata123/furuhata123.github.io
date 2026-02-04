@@ -2,7 +2,7 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8"/>
-    <title>喵喵</title>
+    <title>我的第一篇文章</title>
     <link rel="stylesheet" href="/assets/blog-post.css">
 
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" rel="stylesheet"/>
@@ -33,54 +33,20 @@
 
       <main>
         <div id="post-header"></div>
-        <a href="">喵喵</a>
+        <a href="">我的第一篇文章</a>
       </br>
       <small>
-        2024-01-02
+        2024-01-01
       </small>
       <div class="post-content">
-        <p>md语法样式测试
-喵
-<em>斜体 italic</em>用于突出特定词汇<br>
-<strong>粗体 bold</strong>用于强调核心内容</p>
-<ul>
-<li>This is a unordered list</li>
-<li>无序列表用什么装饰比较好看呢</li>
-</ul>
-<ol>
-<li>This is an ordered list</li>
-<li>嗯~ o(<em>￣▽￣</em>)o</li>
-</ol>
-<p>divider：</p>
-<hr>
-<hr>
-<p>图片测试
-<img src="/assets/unused/plaids.jpg" alt="这是图片" title="pic test"></p>
-<blockquote>
-<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
-<blockquote>
-<p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
-</blockquote>
-</blockquote>
-<p><code>code</code>
-<code>Use `code` in your Markdown file.</code></p>
-<pre><code class="language-js">function test() {
-  console.log(&quot;notice the blank line before this function?&quot;);
-}
-</code></pre>
-<pre><code class="language-css">section h1,
-#features li strong,
-header h2,
-footer p {
-	font: 100% Rockwell, Arvo, serif;
-}
-</code></pre>
+        <p>This solution works well, but I don't want to mark my excerpts manually. I feel pretty strongly that the content of the site should be kept as free as possible from technical implementation details. This feels like a good principle, and will also make the content as portable as possible.
+Another limitation of this solution is that the excerpt generated will be extracted from the raw content, rather than the rendered page. I use Markdown for my posts, so the excerpts I get using the built-in functionality will be snippets of the unprocessed Markdown source. Stripping Markdown formatting from text is a lot trickier than e.g. stripping HTML, as there is no common formatting of control characters etc. I'm sure there are clever regular expressions out there that solves this, but I feel more confident stripping out HTML. Another common approach is to manually run the excerpt through the markdown-it processor used by Eleventy, but I always thought that felt a bit clunky and unnecessary. The page will be processed by markdown-it as part of the site rendering anyway, why do it again just to generate an excerpt?</p>
 
       </div>
     </br>
     <p>Tags:
       &nbsp
-      blog
+      blog,test
     </p>
   </main>
 
