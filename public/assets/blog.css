@@ -1,7 +1,7 @@
 /* font control stuff */
 @font-face {
     font-family: 'serio';
-    src: url('../assets/fonts/SERIO.ttf') format('truetype');
+    src: url('../assets/fonts/SERIO.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -267,7 +267,7 @@ ul {
 #readmore {
     display: inline-block;
     background-color: #ffc5c5;
-    background-image: url('../assets/blog/SB087.jpg');
+    background-image: url('../assets/blog/SB087.JPG');
     padding: 1em;
     position: relative;
     font-weight: bold;
