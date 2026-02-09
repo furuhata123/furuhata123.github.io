@@ -1,0 +1,25 @@
+name: Update messages.json
+
+on:
+  repository_dispatch:
+    types: [netlify_form_submission]
+
+jobs:
+  update-messages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Append new message to messages.json
+        run: |
+          mkdir -p src/assets
+          echo "${{ github.event.client_payload.content }}" > src/assets/messages.json
+
+      - name: Commit changes
+        run: |
+          git config user.name "furuhata123"
+          git config user.email "aerobikhttp@outlook.com"
+          git add src/assets/messages.json
+          git commit -m "update messages.json from Netlify" || echo "No changes"
+          git push
