@@ -49,6 +49,25 @@ body {
     box-sizing: border-box;
 }
 
+#back{
+    color:#6c9788;
+    text-decoration: none;
+    font-family: 'drunk', cursive;
+    font-size:2em;
+
+    position:absolute;
+    top:2%;
+    left:2%;
+
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+#back:hover{
+    color: #e8ffb1;
+    transform: translateY(-1px);
+    filter:blur(0.75px);
+}
+
 .dream-wrapper {
     overflow-y: scroll;
     width: 85vh;

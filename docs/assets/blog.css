@@ -266,20 +266,16 @@ ul {
 
 #readmore {
     display: inline-block;
-    background-color: #ffc5c5;
-    background-image: url('../assets/blog/SB087.JPG');
-    padding: 1em;
     position: relative;
-    font-weight: bold;
-    font-size: 0.8em;
-    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#readmore img{
+    width:30%;
 }
 
 #readmore:hover {
-    background-color: #44ffde;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+
+    transform: translateY(-5px);
     transition: all 0.3s ease;
 }
 

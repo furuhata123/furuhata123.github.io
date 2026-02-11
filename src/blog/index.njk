@@ -35,10 +35,10 @@ title: Blog
         </h2>
         <ul>
           <li>
-            <a href="{{ '/blog/tags/blog' | url }}">Blog</a>
+            <a href="{{ '/blog/tags/blog/index.html' | url }}">Blog</a>
           </li>
           <li>
-            <a href="{{ '/tags/javascript' | url }}">JavaScript</a>
+            <a href="{{ '/tags/test/index.html' | url }}">test</a>
           </li>
           <li>
             <a href="{{ '/tags/css' | url }}">CSS</a>
@@ -110,8 +110,8 @@ title: Blog
             <div id="excerpt">{{ post.data.page.excerpt }}
             &nbsp;
             <span id="readmore">
-                <a href="{{ post.url | url }}"  class="serio">
-                   <span class="block-line"><span><span style="color:#ff6500">R</span><span style="color:#002dff">e</span><span style="color:#ff004b">a</span><span style="color:#9400D3">d&nbsp;</span></span><span><span style="color:#00aaff">m</span><span style="color:#ff00c4">o</span><span style="color:#9400D3">r</span><span style="color:#FF7F00">e</span><span style="color:#ff004e">.</span><span style="color:#00d6ff">.</span><span style="color:#00ff98">.</span></span></span>
+                <a href="{{ post.url | url }}">
+                   <img src="/assets/blog/readmore.webp" alt="readmore">
                 </a>
               </span>
               </div>

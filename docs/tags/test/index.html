@@ -3,40 +3,44 @@
   <head>
     <meta charset="UTF-8"/>
     <title>VOIDHEAD</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/blog-post.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" rel="stylesheet"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-ruby.min.js"></script>
+    <link rel="stylesheet" href="/assets/markdown.css">
 
   </head>
   <body>
     <div class="wrapper">
-      <div class="figure">
-        <img src="/assets/main/figure.webp" alt="mascot"/>
-      </div>
-      <div class="bulletin-frame">
-        <img src="/assets/main/bulletin-border.png" class="bulletin-border"/>
-        <div class="bulletin-content">
-          <h2>公告栏</h2>
-        </br>
-        <p>
-          To-do list</br>
-      </p>
-      <ul>
-        <li>Add more content to the blog section</li>
-        <li>Make a guestbook</li>
-        <li>About(hobby actually?) and <del>free material page</del></li>
-        <li>Draw more stuffs for the site</li>
-      </ul>
+      <aside class="sidebar">
+        <a href="/blog/">
+          <div class="serio" id="back-button">
+            <span class="block-line">
+              <span style="color:#00ff6b">←&nbsp;</span>
+              <span>
+                <span style="color:#2aff00">B</span>
+                <span style="color:#ff9300">A</span>
+                <span style="color:#c000ff">C</span>
+                <span style="color:#ff00c7">K</span></span></span>
+          </div>
+        </a>
+        
+        <img src="/assets/blog/0110.png" alt="deco" style="display:block;margin:0 auto;">
+      </aside>
 
-    </div>
-  </div>
-  <header>
-    <img src="/assets/main/header.webp" alt="Header Image" class="header-image"/>
-    <a href="mailto:thulium69@outlook.com">
-      <img src="/assets/main/b_dol8.gif" alt="Email" id="email-icon"/>
-    </a>
-  </header>
-
-  <main>
-    
+      <main>
+        <div id="post-header"></div>
+        <a href=""></a>
+      </br>
+      <small>
+        Invalid Date
+      </small>
+      <div class="post-content">
+        
 <h1>Tag: test</h1>
 
 <ul>
@@ -51,32 +55,14 @@
   
 </ul>
 
+      </div>
+    </br>
+    <p>Tags:
+      &nbsp
+      
+    </p>
   </main>
 
-  <footer>
-    <small>placeholder for counter?</small>
-  </footer>
-
-  <img src="/assets/main/ratseal.png" alt="rat seal" id="ratseal"/>
-  <img src="/assets/main/xushou.png" alt="xushou" id="xushou"/>
-  <img src="/assets/main/kongnao.png" alt="kongnao" id="kongnao"/>
 </div>
 </body>
-
-<script>
-  document.querySelectorAll(".copy-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const pre = btn.nextElementSibling;
-      const text = pre.innerText;
-
-      navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = "Copied!";
-        setTimeout(() => (btn.textContent = "Copy"), 1500);
-      }).catch(() => {
-        btn.textContent = "❌ Failed";
-      });
-    });
-  });
-</script>
-
 </html>
