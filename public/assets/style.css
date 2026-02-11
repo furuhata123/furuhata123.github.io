@@ -152,6 +152,17 @@ header {
   display: block;
 }
 
+#guest {
+  color:#0dd1ba;
+  text-decoration: none;
+  font-style: italic;
+}
+
+#guest:hover{
+  color:#00ffea;
+  font-style: bold;
+}
+
 main {
   flex: 1;
   background-color: #bdbdbd;
