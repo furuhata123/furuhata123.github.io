@@ -94,44 +94,84 @@ title: Blog
         Eh, hi, it's not about me actually, it's about the blog. I'm lazy to change this part.
         Anyway, the posts here are mostly about computers, and book reviews? I also do translations from time to time.
       </p>
-    </div>
-    <ul id="post-list">
-      {% for post in collections.blog %}
-        <li>
-          <div class="post">
-            <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>
-            
-            <small>
-              {{ post.date | date("yyyy-MM-dd") }}
-            </small>
-          </br>
-          <div class="post-content">
-          <p>
-            <div id="excerpt">{{ post.data.page.excerpt }}
+
+      <h3 class="serio">
+        <span class="block-line">
+          <span>
+            <span style="color:#65ff00">R</span>
+            <span style="color:#001aff">e</span>
+            <span style="color:#0e00ff">a</span>
+            <span style="color:#6200ff">d</span>
+            <span style="color:#0070ff">i</span>
+            <span style="color:#ff0001">n</span>
+            <span style="color:#00fbff">g&nbsp;</span></span>
+          <span>
+            <span style="color:#ff3b00">l</span>
+            <span style="color:#00ffa2">o</span>
+            <span style="color:#00ff76">g</span>
+            <span style="color:#ff0001; font-size:1.5em;">?</span>
+          </span>
+        </span>
+      </h3>
+      <a id="have-read" href="/blog/posts/have-read/">~Books read after site launch~</a>
+      <div id="rlog">
+        <div class="rlog-block">
+          <p class="read-title">
+            To read...
+            </p>
+            <ul id="to-read-list">
+              <li>中国妖鬼</li>
+              <li>test long text aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
+            </ul>
+          </div>
+          <div class="rlog-block">
+            <p class="read-title">
+                Reading...
+            </p>
+            <ul id-"reading-list">
+              <li>日本漫画为什么有趣</li>
+              <li>test long text aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul id="post-list">
+        {% for post in collections.blog %}
+          <li>
+            <div class="post">
+              <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+
+              <small>
+                {{ post.date | date("yyyy-MM-dd") }}
+              </small>
+            </br>
+            <div class="post-content">
+              <p>
+                <div id="excerpt">{{ post.data.page.excerpt }}
             &nbsp;
             <span id="readmore">
-                <a href="{{ post.url | url }}">
-                   <img src="/assets/blog/readmore.webp" alt="readmore">
-                </a>
-              </span>
+                    <a href="{{ post.url | url }}">
+                      <img src="/assets/blog/readmore.webp" alt="readmore">
+                    </a>
+                  </span>
+                </div>
               </div>
-            </div>
-          </p>
-        </br>
-      </div>
+            </p>
+          </br>
+        </div>
 
-    </li>
-  {% endfor %}
-</ul>
+      </li>
+    {% endfor %}
+  </ul>
 </main>
 
 <div id="dream">
-<a href="{{ '/dream' | url }}">My Dream</a>
+  <a href="{{ '/dream' | url }}">My Dream</a>
 </div>
 
 <div id="back-home" class="serio">
   <a href="{{ '/' |url }}">
-  <img src="{{ '/assets/blog/backhome.webp' | url}}" alt="Back to home" />
+    <img src="{{ '/assets/blog/backhome.webp' | url}}" alt="Back to home"/>
   </a>
-  </div>
+</div>
 </div>
