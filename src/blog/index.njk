@@ -136,7 +136,7 @@ title: Blog
         </div>
       </div>
       <ul id="post-list">
-        {% for post in collections.blog %}
+        {% for post in collections.blog | reverse %}
           <li>
             <div class="post">
               <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>

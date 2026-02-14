@@ -107,9 +107,11 @@
   }
   
   .post-content code {
-    background: none;      
-    color: inherit;
+    background-color: #323728;    
+    color: #ffff66;
     font-family: inherit;
+    padding: 0.5rem;
+    border-radius: 4px;
   }
   
   
