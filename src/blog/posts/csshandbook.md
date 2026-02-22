@@ -16,6 +16,56 @@ tags: blog, Frontend
 
 ## Box Model - 元素的边界定义
 已经很熟悉的概念，chrome f12中的elements中有直观的画图演示。不熟悉的是其他属性对Box的影响。
+
+<h1 style="font-style:bold;">你真的熟悉容器吗?</h1>
+
+### 内容适应 div 宽度
+
+```css
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.long-text-no-overflow {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+  /* exactly what i did with this .md style */
+}
+
+```
+
+### div 宽度适应内容
+
+```css
+.small-buttons-stuff {
+  display: inline-block;
+}
+
+div {
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* if it's a flex box */
+.flex-fit-content {
+    display: flex;
+    width: max-content;
+    /* or */
+    align-self: flex-start;
+    /* 后面sticky失效的元凶之一 */
+}
+.or-the-flex-child-goes {
+    flex: none;
+}
+```
+
+
 ## Position - 不同的坐标系
 position就像不同维度的坐标系统。
 | `position` 值 | 类比数学里的坐标系      | 结果                  |
@@ -56,7 +106,7 @@ sticky适用于滚动吸附，如头部导航固定、吸底操作栏（移动�
 | ------------ | --------------------------------- |
 | 宽度/高度没对齐     | `position`可能让它脱离流 → 它不会撑开父容器了    |
 | “贴到哪里”不对     | 检查是否有最近的`position: relative`的祖先 |
-| 被遮住/层级不对   | 没有设置`z-index`，或外层容器层级影响它          |
+| 鼠标被遮住   | 没有设置`z-index`，或外层容器层级影响它，或者被固定元素遮盖（把固定元素的鼠标事件取消）          |
 
 
 豆知识：position: sticky就像是“条件fixed”：
@@ -70,6 +120,9 @@ sticky适用于滚动吸附，如头部导航固定、吸底操作栏（移动�
   top: 0; /* 到这里不动了 */
 }
 ```
+
+**sticky not working**
+两个主要原因：sticky元素比parent元素高，没有空间scroll再sticky；flex或grid布局问题，默认`align-items: strench;`，子元素适应parent高度，无空间以scroll（对sticky加`align-self: flex-start; (or center, flex-end, etc., to create space) `。
 ## Display
 核心问题：一个元素的显示方式是块状、内联，还是栅格 / 弹性布局容器？它能不能包住子元素？子元素的布局规则是什么？
 | 值              | 作用                  | 典型用途                                |
@@ -134,6 +187,9 @@ flex-basis会覆盖width
 | 固定左侧 + 自适右侧    | `.left {flex: 0 0 100px}`<br>`.right {flex: 1}` |
 | 不让缩小           | `flex-shrink: 0`  |
 | 固定宽度优先，空间大了再变大 | `flex: 1 1 200px`|
+
+### flex后记
+我喜欢用百分比宽高，因为比较直观，而且看起来很响应（。。。）但百分比在flex里经常失效，变成内容实际高。因为`%`依赖parent的*确定高度*，如果想要百分比的固定高度，改成`vh`，因为这实际上是**视窗布局**而非parent比例布局。
 
 ## Grid
 与flex不同，grid有横竖两个主轴。

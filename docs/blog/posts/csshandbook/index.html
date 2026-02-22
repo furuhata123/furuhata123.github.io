@@ -72,6 +72,47 @@
 </table>
 <h2>Box Model - 元素的边界定义</h2>
 <p>已经很熟悉的概念，chrome f12中的elements中有直观的画图演示。不熟悉的是其他属性对Box的影响。</p>
+<h1 style="font-style:bold;">你真的熟悉容器吗?</h1>
+<h3>内容适应 div 宽度</h3>
+<pre><code class="language-css">img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.long-text-no-overflow {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+  /* exactly what i did with this .md style */
+}
+
+</code></pre>
+<h3>div 宽度适应内容</h3>
+<pre><code class="language-css">.small-buttons-stuff {
+  display: inline-block;
+}
+
+div {
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* if it's a flex box */
+.flex-fit-content {
+    display: flex;
+    width: max-content;
+    /* or */
+    align-self: flex-start;
+    /* 后面sticky失效的元凶之一 */
+}
+.or-the-flex-child-goes {
+    flex: none;
+}
+</code></pre>
 <h2>Position - 不同的坐标系</h2>
 <p>position就像不同维度的坐标系统。</p>
 <table>
@@ -178,8 +219,8 @@
 <td>检查是否有最近的<code>position: relative</code>的祖先</td>
 </tr>
 <tr>
-<td>被遮住/层级不对</td>
-<td>没有设置<code>z-index</code>，或外层容器层级影响它</td>
+<td>鼠标被遮住</td>
+<td>没有设置<code>z-index</code>，或外层容器层级影响它，或者被固定元素遮盖（把固定元素的鼠标事件取消）</td>
 </tr>
 </tbody>
 </table>
@@ -191,6 +232,8 @@
   top: 0; /* 到这里不动了 */
 }
 </code></pre>
+<p><strong>sticky not working</strong>
+两个主要原因：sticky元素比parent元素高，没有空间scroll再sticky；flex或grid布局问题，默认<code>align-items: strench;</code>，子元素适应parent高度，无空间以scroll（对sticky加<code>align-self: flex-start; (or center, flex-end, etc., to create space) </code>。</p>
 <h2>Display</h2>
 <p>核心问题：一个元素的显示方式是块状、内联，还是栅格 / 弹性布局容器？它能不能包住子元素？子元素的布局规则是什么？</p>
 <table>
@@ -322,6 +365,8 @@
 </tr>
 </tbody>
 </table>
+<h3>flex后记</h3>
+<p>我喜欢用百分比宽高，因为比较直观，而且看起来很响应（。。。）但百分比在flex里经常失效，变成内容实际高。因为<code>%</code>依赖parent的<em>确定高度</em>，如果想要百分比的固定高度，改成<code>vh</code>，因为这实际上是<strong>视窗布局</strong>而非parent比例布局。</p>
 <h2>Grid</h2>
 <p>与flex不同，grid有横竖两个主轴。
 <code>grid-template-row/column</code>控制几行/几列；<code>gap</code>控制每个格子间距。</p>
