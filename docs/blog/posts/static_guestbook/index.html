@@ -52,6 +52,7 @@
 <li>As simple as possible</li>
 </ul>
 <p>After several attempts, I ended up using <code>google form -&gt; google sheet -&gt; google app scripts.</code></p>
+<!-- readmore -->
 <h1>Initial Approach</h1>
 <p>My initial approach was to build a netlify app, since netlify has built-in form, and I saw someone building a netlify guestbook with 11ty. The problem is netify and github are two different system, although you can iframe netlify app to gh page? but there could be many problems and I want to avoid iframe. The next idea was,<code>netlify -&gt; some automation service (zapire?) -&gt; github</code>. And this is where stupidity began. Since netlify form doesn't support json...</p>
 <pre><code class="language-js">User

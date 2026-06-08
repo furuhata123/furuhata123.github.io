@@ -12,9 +12,27 @@ module.exports = function (eleventyConfig) {
 
 
     // 摘要短代码
-    eleventyConfig.setFrontMatterParsingOptions({
+    /*eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
         excerpt_separator: "<!-- readmore -->",
+        excerpt_alias: function(file) {
+            if (file.excerpt) {
+                const md = require("markdown-it")({
+                    html: true,
+                    linkify: true,
+                    typographer: true
+                });
+                
+                file.excerpt = md.render(file.excerpt);
+            }
+        }
+    });*/
+    eleventyConfig.addFilter("get_excerpt", function(content) {
+        const separator = "<!-- readmore -->";
+        if (content && content.includes(separator)) {
+            return content.split(separator)[0];
+        }
+        return content;
     });
 
     // date format
