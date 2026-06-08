@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Archive</title>
+    <title>How computer structured and 3DS encryption</title>
     <link rel="stylesheet" href="/assets/blog-post.css">
 
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" rel="stylesheet"/>
@@ -35,77 +35,40 @@
 
       <main>
         <div id="post-header"></div>
-        <a href="">Archive</a>
+        <a href="">How computer structured and 3DS encryption</a>
       </br>
       <small>
-        1899-11-30
+        2026-05-01
       </small>
       <div class="post-content">
-        <p style="color:grey;font-style:italic;">Last Modified Time</p>
-<ul class="archive-list">
-    
-        <li>
-            <span class="date">
-                2026-02-13
-            </span>
+        <p>Suppose we're going to build a computer, we'd like the computer 1. processes as fast as possible; 2. store as much data as possible.</p>
+<ol>
+<li>constructions
+CPU consists of 3 parts, logic units, comtrol units and registers.
+(actually we have special memory called cache)
+a natural approach is to make memory units and processing units close, that's why we need registers, there are different kinds of registers, GPR &amp; SPR.
+General-purpose registers are used to hold the data immediately applicable to the operation at hand; main memory is used to hold data that will be needed in the near future, and mass storage is used to hold data that will likely not be needed in the near future.
+Data transfer on wires, main memory and CPU are connected by a bunch of wires called bus
+stored-program concept</li>
+<li>communications
+CPU can directly access memory(DMA)(what's the difference between dam and accessing registers?)
+to communicate with other devices, a computer needs a controller (port???)
+2 standards: USB and firewire
+memory mapped I/O
+handshaking
+status word
+parallel and serial communication
+modem</li>
+<li>languages
+Stored-program Concept
+Machine Cycle: Fetch（取）、Decode（译）、Execute（执）</li>
+</ol>
 
-            <a href="/blog/posts/datamanipulation/">How computer structured and 3DS encryption</a>
-        </li>
-    
-        <li>
-            <span class="date">
-                2026-02-13
-            </span>
-
-            <a href="/blog/posts/static_guestbook/">Serverless Guestbook on Static Site with Canvas</a>
-        </li>
-    
-        <li>
-            <span class="date">
-                2026-02-13
-            </span>
-
-            <a href="/blog/posts/测试-中文/">喵喵</a>
-        </li>
-    
-        <li>
-            <span class="date">
-                2026-02-13
-            </span>
-
-            <a href="/blog/posts/dev-log/">Dev Log</a>
-        </li>
-    
-        <li>
-            <span class="date">
-                2026-02-13
-            </span>
-
-            <a href="/blog/posts/csshandbook/">CSS Debug Handbook - Layout Essentials</a>
-        </li>
-    
-        <li>
-            <span class="date">
-                2026-02-13
-            </span>
-
-            <a href="/blog/posts/PofLnotes/">《解放的悖论——世俗革命与宗教反革命》笔记</a>
-        </li>
-    
-        <li>
-            <span class="date">
-                2026-02-13
-            </span>
-
-            <a href="/blog/posts/AccManifesto/">加速主义政治宣言/Accelerate Manifesto</a>
-        </li>
-    
-</ul>
       </div>
     </br>
     <p>Tags:
       &nbsp
-      
+      blog,crypto
     </p>
   </main>
 
