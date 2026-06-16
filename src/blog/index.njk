@@ -17,72 +17,7 @@ title: Blog
     </span>
   </label>
 
-
-  <main>
-    <div id="blog-header">
-      <h2 class="serio">
-        <span class="block-line">
-          <span>
-            <span style="color:#00b3ff">A</span>
-            <span style="color:#9c00ff">b</span>
-            <span style="color:#00ff8b">o</span>
-            <span style="color:#91ff00">u</span>
-            <span style="color:#ff6b00">t&nbsp;</span></span>
-      </h2>
-      <p>
-        just posting nonsense.
-      </p>
-
-      <h3 class="serio">
-        <span class="block-line">
-          <span>
-            <span style="color:#65ff00">R</span>
-            <span style="color:#001aff">e</span>
-            <span style="color:#0e00ff">a</span>
-            <span style="color:#6200ff">d</span>
-            <span style="color:#0070ff">i</span>
-            <span style="color:#ff0001">n</span>
-            <span style="color:#00fbff">g&nbsp;</span></span>
-          <span>
-            <span style="color:#ff3b00">l</span>
-            <span style="color:#00ffa2">o</span>
-            <span style="color:#00ff76">g</span>
-            <span style="color:#ff0001; font-size:1.5em;">?</span>
-          </span>
-        </span>
-      </h3>
-      </div>
-      <ul id="post-list">
-        {% for post in collections.blog | reverse %}
-          <li>
-            <div class="post">
-              <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>
-
-              <small>
-                {{ post.date | date("yyyy-MM-dd") }}
-              </small>
-            </br>
-            <div class="post-content">
-              <p>
-                <div id="excerpt">{{ post.templateContent | get_excerpt | safe }}
-            &nbsp;
-            <span id="readmore">
-                    <a href="{{ post.url | url }}">
-                      <img src="/assets/blog/readmore.webp" alt="readmore">
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </p>
-          </br>
-        </div>
-
-      </li>
-    {% endfor %}
-  </ul>
-</main>
-
-  <aside id="sidebar">
+<aside id="sidebar">
     <div id="avatar">
       <img src="{{ '/assets/blog/avatar.png'| url }}" alt="Avatar" >
       <small style="color: grey;">©쵸지</small>
@@ -141,6 +76,70 @@ title: Blog
       <small style="color: grey;">©쵸지</small>
     </div>
   </aside>
+
+  <main>
+
+    <div id="blog-header">
+      <h2 class="serio">
+        <span class="block-line">
+            <span style="color:#00b3ff">A</span>
+            <span style="color:#9c00ff">b</span>
+            <span style="color:#00ff8b">o</span>
+            <span style="color:#91ff00">u</span>
+            <span style="color:#ff6b00">t&nbsp;</span>
+          </span>
+        </h2>
+        <p>
+        just posting nonsense.
+      </p>
+
+        <h3 class="serio">
+          <span class="block-line">
+            <span>
+              <span style="color:#65ff00">R</span>
+              <span style="color:#001aff">e</span>
+              <span style="color:#0e00ff">a</span>
+              <span style="color:#6200ff">d</span>
+              <span style="color:#0070ff">i</span>
+              <span style="color:#ff0001">n</span>
+              <span style="color:#00fbff">g&nbsp;</span></span>
+            <span>
+              <span style="color:#ff3b00">l</span>
+              <span style="color:#00ffa2">o</span>
+              <span style="color:#00ff76">g</span>
+              <span style="color:#ff0001; font-size:1.5em;">?</span>
+            </span>
+          </span>
+        </h3>
+      </div>
+      <ul id="post-list">
+        {% for post in collections.blog | reverse %}
+          <li>
+            <div class="post">
+              <a class="post-title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+
+              <small>
+                {{ post.date | date("yyyy-MM-dd") }}
+              </small>
+            </br>
+            <div class="post-content">
+              <p>
+                <div id="excerpt">{{ post.templateContent | get_excerpt | safe }}
+            &nbsp;
+            <span id="readmore">
+                    <a href="{{ post.url | url }}">
+                      <img src="/assets/blog/readmore.webp" alt="readmore">
+                    </a>
+                  </span>
+                </div>
+              
+            </p>
+            </div>
+          </br>
+      </li>
+    {% endfor %}
+  </ul>
+</main>
 
 <div id="back-home" class="serio">
   <a href="{{ '/' |url }}">

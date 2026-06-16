@@ -130,7 +130,22 @@ recursive_bubble(round,list){
     recursive_bubble(round+1,list)
 }
 </code></pre>
-<p>To put it bluntly, recursive is a form of stacks/tree</p>
+<p>To put it bluntly, recursive is a form of stacks/tree
+A tree means that, in one logic layer, the layer calls itself more than once, like
+$$
+F(n) = F(n-1) + F(n-2)
+$$
+But stuff like bubble sort, which only call itself once (Single Recursion) is a tree only have one side of branch:</p>
+<ul>
+<li>root: bubble(list, n=0)</li>
+<li>child: n=1</li>
+<li>grandchild: n=2......</li>
+</ul>
+<p>Quick sort is recursive on both sides, so it's a binary tree.
+The height of the tree is how many pieces we cut the question into</p>
+<p>There is also... something based on graphs. If you think about Fibonacci sequence, F(5)=F(4)+F(3), F(4)=F(3)+F(2), WHERE F(3) was called twice. If we take each call as a node...(?)</p>
+<h1>Searchings</h1>
+<p>Two very instinctive approach are sequence search and binary search</p>
 
       </div>
     </br>
@@ -141,5 +156,15 @@ recursive_bubble(round,list){
   </main>
 
 </div>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']], 
+      displayMath: [['$$', '$$']],
+      processEscapes: true
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

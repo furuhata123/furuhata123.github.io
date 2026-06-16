@@ -101,3 +101,19 @@ recursive_bubble(round,list){
 }
 ```
 To put it bluntly, recursive is a form of stacks/tree
+A tree means that, in one logic layer, the layer calls itself more than once, like
+$$
+F(n) = F(n-1) + F(n-2)
+$$
+But stuff like bubble sort, which only call itself once (Single Recursion) is a tree only have one side of branch:
+- root: bubble(list, n=0)
+- child: n=1
+- grandchild: n=2......
+
+Quick sort is recursive on both sides, so it's a binary tree.
+The height of the tree is how many pieces we cut the question into
+
+There is also... something based on graphs. If you think about Fibonacci sequence, F(5)=F(4)+F(3), F(4)=F(3)+F(2), WHERE F(3) was called twice. If we take each call as a node...(?)
+
+# Searchings
+Two very instinctive approach are sequence search and binary search

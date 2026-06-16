@@ -63,13 +63,7 @@
         display: block;
     }
 
-    #dream {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 20em;
-    }
+
 
     #content {
         display: flex;
@@ -128,11 +122,12 @@ body {
 
 #content {
     display: flex;
-    background-color: transparent;
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    max-width: 960px;
     box-sizing: border-box;
+    margin: 2em auto;
+    gap: 2em;
+
 }
 
 #mobile-togglebar {
@@ -145,16 +140,18 @@ body {
     border: 1px solid #dcdcdc;
     float: left;
     height: fit-content;
-    min-width: 400px;
     flex-shrink: 0;
-    padding: 2em;
+
     border-top: #e1e100 2px solid;
     border-bottom: #08aa98 2px solid;
 
 
     position: sticky;
     top: 0;
-
+    align-self: flex-start;
+    padding: 1.2em;
+    max-width: 320px;
+    min-width: 300px;
 }
 
 
@@ -231,15 +228,18 @@ a {
 
 .links {
     max-width: 960px;
+    text-align: center;
+}
+
+.links ul, .tags ul{
+    padding: 0;
 }
 
 main {
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    padding: 2em;
-    padding-bottom: 0;
-    padding-right: 0;
+    padding: 0;
     min-width: 0;
 }
 
@@ -309,13 +309,11 @@ ul {
 
 
 #back-home {
-    display: inline-block;
+    position: fixed;
 
-    position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 6em;
 
-    animation: floaty 3s ease-in-out infinite;
 }
 
 #back-home img {
@@ -324,20 +322,6 @@ ul {
 
 #back-home:hover img{
     transform: scale(0.6) rotate(10deg);
-}
-
-@keyframes floaty {
-    0% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-5px) rotate(1deg);
-    }
-
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
 }
 
 /* md */
