@@ -1,7 +1,6 @@
 const { DateTime } = require("luxon");
 const path = require("path");
 const fs = require("fs");
-
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
     eleventyConfig.addPassthroughCopy("src/assets");
@@ -67,8 +66,7 @@ module.exports = function (eleventyConfig) {
     });
 
 
-
-
+    
 
 
 
