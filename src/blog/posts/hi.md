@@ -106,3 +106,50 @@ pointing device
 
 ### post-wimp
 VR AR painter gusture tabletop robot natruallanguage tangible pysical
+
+# Interaction Design Data Gathering
+
+## The Lifecycle of Interaction Design (IxD)
+1. **Establishing Requirements**
+2. **Designing Alternative Designs**
+3. **Prototyping**
+4. **Evaluation**
+
+### Why Data Gathering is Crucial?
+* **Requirements Definition:** To establish trustworthy and reliable requirements by understanding user needs.
+* **Evaluation:** To assess user reactions and evaluate system performance metrics.
+
+---
+
+## Five Key Issues in Data Gathering
+1. **Setting Objectives:** Clearly define the purpose of the data gathering process before starting.
+2. **Identifying Subjects/Participants:** Decide which target group fits the user profile.
+   * *Population:* The entire group of people that fits the target profile.
+   * *Sampling:* Selecting a subset of the population. Methods include: **Saturation, Probability (or Non-probability), Random, and Stratified sampling**.
+3. **Relationship with Participants:** Maintain a professional and unbiased relationship (e.g., ensure participants don't just say what you want to hear).
+4. **Triangulation:** Using two or more data gathering methods or data sources to investigate the same issue, ensuring validity and avoiding bias.
+5. **Pilot Study:** A small-scale trial run conducted before the main study to test the process, questions, and equipment for potential bugs.
+
+---
+
+## Data Types: Quantitative vs. Qualitative Analysis
+
+| Dimension | Quantitative Data / Analysis | Qualitative Data / Analysis |
+| :--- | :--- | :--- |
+| **Data Definition** | Information expressed in **numerical values** (e.g., number of clicks, time in seconds, number of users, cost in dollars). | Information that **cannot be measured numerically** (e.g., aesthetics, user frustration, satisfaction, perceived usability). |
+| **Analysis Method** | Numerical or statistical methods used to determine sizes, magnitudes, or quantities. | Expressing characteristics and findings through **Themes, Patterns, and Stories**. |
+| **Evaluation Focus** | **Objective and holistic** assessment of the system. | **Detailed and deep** assessment of individual samples or specific parts of the system. |
+| **Sample Size** | Requires **a relatively large sample size** to ensure statistical significance. | Analyzes **fewer samples deeply** to extract rich user insights. |
+
+---
+
+## Integrated Comparison of Data Gathering Methods
+
+| Method | Best Purpose | Data Type | Advantages | Disadvantages | Pre-processing Steps | Design & Key Concepts |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Interview** | Exploring problems and user goals. | Mostly **Qualitative** (can include quantitative). | • Interviewer can **guide and probe** the participant as needed.<br>• Fosters direct contact between developers and users. | • **Time-consuming**.<br>• Artificial lab/office environments can feel **intimidating** to participants. | • *Raw:* Audio recordings, videos, interviewer notes.<br>• *Pre-processing:* **Transcription (audio-to-text)**, expanding field notes. | • **Types:** Structured, Unstructured, Semi-structured.<br>• **Question format:** Open-ended, Closed-ended.<br>• Questions must be **clear, concise, and never leading**. |
+| **Focus Group** | Gathering **diverse viewpoints** and consensus. | Mostly **Qualitative** (can include quantitative). | • Highlights areas of consensus or conflict among users.<br>• Fosters interaction between developers and multiple users at once. | Can be dominated by **one or two dominant/aggressive participants**, silencing others. | • *Raw:* Audio/video recordings.<br>• *Pre-processing:* Transcription and speaker alignment. | Usually consists of **3 to 10 participants** led by a trained facilitator. |
+| **Questionnaire** | Answering **specific, well-defined questions**. | Both **Quantitative & Qualitative**. | **Reaches a large number of people** with very few resources (highly efficient). | • **Design of the survey is critical**.<br>• Low response rates.<br>• May not yield the depth of information actually needed. | • *Raw:* Paper responses, online databases.<br>• *Pre-processing:* **Data cleaning**, filtering incomplete or invalid responses. | • **Structure:** 1. Background info, 2. Core questions.<br>• **Answer formats:** Checkboxes, **Likert Scale** (e.g., 1-5 rating), **Semantic Differential Scale** (bipolar adjectives). |
+| **Direct Obs. (Field)** | Understanding user activities within their **true context**. | Primarily **Qualitative**. | Observing actual tasks yields **deep insights** that cannot be obtained through other methods. | • **Extremely time-consuming**.<br>• Generates **massive amounts of data** that are hard to analyze. | • *Raw:* Observer notes, photos, audio/video, **Think-Aloud** protocols.<br>• *Pre-processing:* Transcription, note expansion, aligning multiple data streams. | Tied to **Ethnography**. The designer acts as a passive observer in the user's natural environment. |
+| **Direct Obs. (Lab)** | Capturing **individual behaviors and actions** in detail. | Both **Quantitative & Qualitative**. | **Free from external interruptions**, allowing users to focus entirely on specific tasks. | Because the conditions are **artificial/simulated**, results may have limited applicability to real-world environments. | • *Raw:* Interaction logs, task completion times, demographic data.<br>• *Pre-processing:* Transcription, expanding notes, synchronizing recording timelines. | Usually conducted in a usability lab with specific task sheets. |
+| **Indirect Obs.** | Observing users and **automatically capturing data** without disrupting them. | **Quantitative** (logs) & **Qualitative** (diaries). | • Users are not distracted by the data gathering process.<br>• Automation enables **long-term observation**. | • Analyzing massive amounts of quantitative log data **requires specialized software tools**.<br>• Participants' memories in **diaries may be exaggerated or biased**. | • *Raw:* **System log data**, user diary entries.<br>• *Pre-processing:* Filtering log data, cross-checking and aligning multi-source datasets. | Most natural user experience since no observer is physically present. |
