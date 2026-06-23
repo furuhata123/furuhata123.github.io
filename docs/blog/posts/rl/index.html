@@ -41,7 +41,20 @@
         2026-06-01
       </small>
       <div class="post-content">
-        <h1>Markov Decision Process (MDP)</h1>
+        <h1>Definations</h1>
+<p>• Agent:</p>
+<p>An entity that <strong>interacts with the environment</strong> by observing states, <strong>taking actions</strong>, and receiving rewards. Its goal is to find an optimal policy that <strong>maximizes the expected cumulative reward</strong> (or long-term return) over time.</p>
+<p>• Environment:</p>
+<p>The <strong>external system</strong> with which the agent interacts. It is formally defined by a set of states ($S$), a set of actions ($A$), <strong>transition probabilities ($T$)</strong>, and a <strong>reward function ($R$)</strong>. It responds to the agent's actions and dictates the next state and immediate reward.</p>
+<p>• Policy $\pi$：</p>
+<p>A <strong>mapping (or function) from states</strong> to actions. It <strong>defines the agent's behavior</strong> by specifying which action $a \in A$ to choose (or the probability distribution over actions) when in a given state $s \in S$. Denoted as <strong>$\pi(s) = a$.</strong></p>
+<p>• Reward</p>
+<p>A <strong>scalar feedback signal</strong> returned by the environment after the agent transitions from state $s$ to $s'$ via action $a$. It evaluates the <strong>immediate success</strong> of an action and is represented mathematically as a function <strong>$R(s, a, s')$</strong>.</p>
+<p>• State</p>
+<p>A formal <strong>representation of the environment</strong> at a specific moment in time. In an MDP, a state must satisfy <strong>the Markov property</strong>, meaning it captures all relevant information from the past such that the future <strong>depends only on the current state</strong>, not on the sequence of past states.</p>
+<p>discount: the decrease rate of future rewards</p>
+<!-- readmore -->
+<h1>Markov Decision Process (MDP)</h1>
 <p>when there are multiple subsequent states following one action.</p>
 <ul>
 <li>states <strong>s</strong></li>
@@ -94,9 +107,55 @@ the total reward of new state s': $\left[ R(s, a, s') + \gamma U^\ast(s') \right
 $$Q^\ast(s, a) = \sum_{s'} T(s, a, s') \times \left[ R(s, a, s') + \gamma U^\ast(s') \right]$$
 The equation creates a dynamic programming problem.</p>
 <h3>Value iteration</h3>
+<p>the bellman equation:
+$$
+U^(s) = \max_a \sum_{s'} T(s, a, s')\times(R(s, a,s') + \gamma U^(s')) = \max_a Q^(s, a)
+$$
+but since there is a Rmax, it's a non-linear equation, thus we can't solve it by matrix. we need to... endlessly(?) plug in, getting closer and closer to the answer.
+$$U_{k+1}(s) \leftarrow \max_a \sum_{s'} T(s, a, s') \times \left( R(s, a, s') + \gamma U_k(s') \right)$$</p>
+<h4>Q-value Iteration</h4>
+<p>$$Q_{k+1}(s,a) = \sum_{s'} T(s, a, s') \times \left( R(s, a, s') + \gamma \max_{a'} Q_k (s', a') \right)$$
+in value iteration, we choose action before transition, whereas in Q-value interation, we make a transition before choosing action</p>
+<blockquote>
+<p>Some values we used:</p>
+<ol>
+<li><strong>G</strong>: a specific value of established fact. $$G = R_1 + \gamma R_2 + \gamma^2 R_3 + \dots$$</li>
+<li>U/V: 最微观（落地切片）：知道了终点身价 $U^<em>(s')$。加上眼前的路费，就拼凑出了具体的单次落点得分：$$U(s, a, s') = R(s, a, s') + \gamma U^</em>(s')$$，</li>
+<li>Q,Q*，中观（悬空动作）：因为有概率，我把所有可能的落点切片 $U(s, a, s')$ 乘上概率求和，得到了悬空动作的身价 $Q^<em>(s, a)$：$$Q^</em>(s, a) = \sum_{s'} T(s, a, s') \mathbf{U(s, a, s')}$$</li>
+<li>U*:站在房间$s$里，面对眼前的所有动作，直接取个 $\max$，选最棒的那个 $Q^\ast$ 动作，作为我这个房间的终极身价 $U^\ast(s)$：$$U^\ast(s) = \max_a Q^\ast(s, a)$$</li>
+</ol>
+<p>从4到2到3，可以开启递归</p>
+</blockquote>
 <h3>Policy iteration</h3>
-<h2>TD learning</h2>
-<h2>Q-learning</h2>
+<h2>$$\pi_{i+1}(s) = \arg\max_a \sum_{s'} T(s, a, s') [R(s, a, s') + \gamma U^{\pi_i}(s')]$$</h2>
+<p>model-based: using samples to estimate transform function and reward function, and using value/policy iteration to get MDP</p>
+<p>model-free: directly estimate value/Q-value of state in MDP, no transform/reward model</p>
+<h2>passive RL</h2>
+<p>adapting one policy, learn state value under this policy</p>
+<h3>DE</h3>
+<h3>TDlearning</h3>
+<h4>Monte Carlo (MC) Policy Evaluation</h4>
+<p>$$ V^\pi(s) \text{ for each state by averaging returns achieved from } s \text{ across all samples}$$</p>
+<hr>
+<p>Problem with MC policy evaluation: agent has to reach end point get G to update Vs. if the game is infinite or long,
+$$V^\pi(s) \leftarrow V^\pi(s) + \alpha \Big( { R(s, \pi(s), s') + \gamma V^\pi(s') } - { V^\pi(s) } \Big)$$
+update state value in one step.
+${ R(s, \pi(s), s') + \gamma V^\pi(s') }$ is current value, minus past value.</p>
+<p>if difference is 0, td error is 0. if reality&gt;past, that means we underestimate this s, <strong>using learning rate alpha to slightly raise the value to the reality</strong>......</p>
+<p>learning rate is how much we believe our new experience</p>
+<p>Rearrange the equation:
+$$
+V^\pi(s) \leftarrow (1-\alpha)V^\pi(s) + \alpha[R(s, \pi(s), s') + \gamma V^\pi(s')]
+$$
+$(1-\alpha)$: how much we preserve old experience</p>
+<p><strong>Exponentially Weighted Moving Average</strong>: since $(1-\alpha) &lt; 1$, it made past memories decrease to 0 quickly.</p>
+<h2>active RL: Q-learning</h2>
+<p>Active reinforcement learning: use feedback to iteratively update policy, eventually learning optimal policy
+$$
+Q(s, a) \leftarrow (1-\alpha)Q(s,a) + \alpha[R(s, a, s') + \gamma \max_{a'} Q(s', a')]
+$$
+ACTUALLY THE SAME</p>
+<h2>Epsilon-Greedy</h2>
 
       </div>
     </br>

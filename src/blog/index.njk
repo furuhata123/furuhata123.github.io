@@ -18,6 +18,12 @@ title: Blog
   </label>
 
 <aside id="sidebar">
+  <div id="back-home" class="serio">
+  <a href="{{ '/' |url }}">
+    <img src="{{ '/assets/blog/backhome.webp' | url}}" alt="Back to home"/>
+  </a>
+</div>
+
     <div id="avatar">
       <img src="{{ '/assets/blog/avatar.png'| url }}" alt="Avatar" >
       <small style="color: grey;">©쵸지</small>
@@ -111,6 +117,8 @@ title: Blog
             </span>
           </span>
         </h3>
+        <a href="{{ '/reading' | url }}">
+          i'm building a reading log, since not all books are worth writing a full review.</a>
       </div>
       <ul id="post-list">
         {% for post in collections.blog | reverse %}
@@ -141,10 +149,6 @@ title: Blog
   </ul>
 </main>
 
-<div id="back-home" class="serio">
-  <a href="{{ '/' |url }}">
-    <img src="{{ '/assets/blog/backhome.webp' | url}}" alt="Back to home"/>
-  </a>
-</div>
+
 
 </div>

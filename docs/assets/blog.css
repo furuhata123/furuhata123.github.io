@@ -250,6 +250,14 @@ main {
     margin: 0.5em;
     width: 90%;
 }
+#blog-header p{
+    background-color:#467ee7;
+    color:#e1e100;
+    width:fit-content;
+}
+#blog-header a{
+    background-color:#ffbac7;
+}
 
 #post-list {
     flex: 2;

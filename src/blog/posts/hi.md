@@ -153,3 +153,46 @@ VR AR painter gusture tabletop robot natruallanguage tangible pysical
 | **Direct Obs. (Field)** | Understanding user activities within their **true context**. | Primarily **Qualitative**. | Observing actual tasks yields **deep insights** that cannot be obtained through other methods. | • **Extremely time-consuming**.<br>• Generates **massive amounts of data** that are hard to analyze. | • *Raw:* Observer notes, photos, audio/video, **Think-Aloud** protocols.<br>• *Pre-processing:* Transcription, note expansion, aligning multiple data streams. | Tied to **Ethnography**. The designer acts as a passive observer in the user's natural environment. |
 | **Direct Obs. (Lab)** | Capturing **individual behaviors and actions** in detail. | Both **Quantitative & Qualitative**. | **Free from external interruptions**, allowing users to focus entirely on specific tasks. | Because the conditions are **artificial/simulated**, results may have limited applicability to real-world environments. | • *Raw:* Interaction logs, task completion times, demographic data.<br>• *Pre-processing:* Transcription, expanding notes, synchronizing recording timelines. | Usually conducted in a usability lab with specific task sheets. |
 | **Indirect Obs.** | Observing users and **automatically capturing data** without disrupting them. | **Quantitative** (logs) & **Qualitative** (diaries). | • Users are not distracted by the data gathering process.<br>• Automation enables **long-term observation**. | • Analyzing massive amounts of quantitative log data **requires specialized software tools**.<br>• Participants' memories in **diaries may be exaggerated or biased**. | • *Raw:* **System log data**, user diary entries.<br>• *Pre-processing:* Filtering log data, cross-checking and aligning multi-source datasets. | Most natural user experience since no observer is physically present. |
+
+# Social interaction
+Awareness, copresence, communication, collabration
+
+**awareness is an understanding of the activities of others, which provides a context for your own activity**
+
+- group awareness, slack, zoom, notion (anything modern?)*knowing what step others have reached*
+- workplace awareness, shared editor...
+- contextual awareness
+
+awareness-spporting system design
+- whoes info is provided by whom? privacy?
+- what kind of info is provided
+- when? 
+- where
+- how
+
+social awareness, task awareness, concept ~, workspace
+
+# Big data analyse
+big data refers to the ability to use these every increasing data
+
+**five characteristics:**
+1. volume: size
+2. variety: type and nature
+3. velocity: generating speed
+4. veracity: quality/reliability
+5. value: worth
+
+architecture: source->collection->processing->store->consume
+
+## collecting learning big data
+learning: to gain knowledge from experience/being taught
+
+learning analytics cycle
+
+## common data model/store
+## quantitative
+moving avg, box plot, density map
+## hierarchical
+cluster dendrogram, treemap
+## network
+sanky diagram, chord diagram, node/vertax graph

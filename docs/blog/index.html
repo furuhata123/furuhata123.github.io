@@ -30,6 +30,12 @@
   </label>
 
 <aside id="sidebar">
+  <div id="back-home" class="serio">
+  <a href="/">
+    <img src="/assets/blog/backhome.webp" alt="Back to home"/>
+  </a>
+</div>
+
     <div id="avatar">
       <img src="/assets/blog/avatar.png" alt="Avatar" >
       <small style="color: grey;">©쵸지</small>
@@ -123,9 +129,43 @@
             </span>
           </span>
         </h3>
+        <a href="/reading">
+          i'm building a reading log, since not all books are worth writing a full review.</a>
       </div>
       <ul id="post-list">
         
+          <li>
+            <div class="post">
+              <a class="post-title" href="/blog/posts/se/">Quick handbook of software engineering</a>
+
+              <small>
+                2026-06-20
+              </small>
+            </br>
+            <div class="post-content">
+              <p>
+                <div id="excerpt"><h1>life cycle</h1>
+<h2>Development</h2>
+<ol>
+<li>Requirement Analysis Phase: In this phase, software engineers interact with stakeholders to <strong>specify the services and constraints</strong> of the software system, identify any <strong>conditions</strong> on the services, define how outside world will interact with the system. The goal is to understand the problem fully and document all requirements.</li>
+<li>Design Phase: <strong>Designing a plan for the constructions of the proposed system.</strong> It establishes the internal structure of the system, including its software architecture, database design, and user interfaces, based on the SRS</li>
+<li>Implementation Phase: <strong>actual writing of programs</strong> It translates the design specifications into <strong>executable source code</strong>. It also includes <strong>unit testing</strong> written by the developers themselves</li>
+<li>Testing Phase: In this phase, the software is rigorously evaluated to ensure it meets the original requirements and is free of defects (bugs). It involves running the system under various conditions to verify its correctness and reliability. (<strong>debugging, confirming compatible with the requirements</strong>)</li>
+</ol>
+
+            &nbsp;
+            <span id="readmore">
+                    <a href="/blog/posts/se/">
+                      <img src="/assets/blog/readmore.webp" alt="readmore">
+                    </a>
+                  </span>
+                </div>
+              
+            </p>
+            </div>
+          </br>
+      </li>
+    
           <li>
             <div class="post">
               <a class="post-title" href="/blog/posts/sort/">On Sorting (...searching, and more)</a>
@@ -161,62 +201,18 @@
             </br>
             <div class="post-content">
               <p>
-                <div id="excerpt"><h1>Markov Decision Process (MDP)</h1>
-<p>when there are multiple subsequent states following one action.</p>
-<ul>
-<li>states <strong>s</strong></li>
-<li>actions <strong>a</strong></li>
-<li>Transformation <strong>T(s,a,s')~P(s'|s,a)</strong>, the probability of s transforming to s' after action a.</li>
-<li>Reward <strong>R(s,a,s')</strong></li>
-<li>Discount <strong>$\gamma \in [0, 1]$</strong></li>
-<li>start state</li>
-<li>end state
-ultility function
-$$G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \gamma^3 R_{t+4} + \dots = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$</li>
-</ul>
-<p>The primary goal for an MDP is to find an optimal policy $\pi^*$ that gives us an action for every state that results in the maximum expected utility(G).</p>
-<p>The reward is bounded by the value $\frac{R_{\max}}{1-\gamma}$.</p>
-<p>suppose agent can get max reward in each future step, $R_{t+k+1} = R_{\max}$
-$$G_t \le \sum_{k=0}^{\infty} \gamma^k R_{\max} = R_{\max} \sum_{k=0}^{\infty} \gamma^k$$
-$$1 + \gamma + \gamma^2 + \gamma^3 + \gamma^4 + \dots$$
-$\gamma &lt; 1$, $$\sum_{k=0}^{\infty} \gamma^k = \frac{1}{1 - \gamma}$$
-thus, $$G_t \le \frac{R_{\max}}{1 - \gamma}$$</p>
-<p>in Infinite Horizon MDP, when $\gamma &lt; 1$, total reward &lt;= $\frac{R_{\max}}{1-\gamma}$</p>
-<h2>Reward Design / Reward Shaping</h2>
-<blockquote>
-<p>suppose agent can get max reward in each future step, $R_{t+k+1} = R_{\max}$</p>
-</blockquote>
-<p>not all Rmax in each step is the same, however, one enviroment, in all possible time and action/state, there's always a maximum reward.</p>
-<p><em>like, in an auto-drive system, if the reward of getting to end point is 100, then the reward of every other step can't exceed 100.</em></p>
-<h3>Intent Alignment / Time Penalty</h3>
-<h3>Reward Hacking</h3>
-<h2>Solving MDP</h2>
-<p>expectancy pruning tree</p>
-<p>nodes:</p>
-<ul>
-<li>states(s), the state where agent is at, but not taking any action, ultimate value  $U^*(s)$</li>
-<li>Q-state(s,a), the state where agent is at, and has taken some action, but not to the next state. $Q^*(s, a)$</li>
-</ul>
-<h3>Bellman Equation</h3>
-<p>$$
-U^(s) = \max_a \sum_{s'} T(s, a, s')\times(R(s, a,s') + \gamma U^(s')) = \max_a Q^(s, a)
-$$
-in state s, there are actions a1, a2, a3, each action has a expect value Q*.
-we choose the action where Q* is the max.
-$$\text{其中 } Q^(s, a) = \sum_{s'} T(s, a, s') \times \left[ R(s, a, s') + \gamma U^\ast(s') \right]$$
-when we take action a, enter the node $Q^\ast(s, a)$, the possibility of transforming from s to s' is $T(s,a,s')$, and the instance we are in state s', we get:</p>
-<ol>
-<li>instant reward $R(s, a, s')$</li>
-<li>value of new state itself $U^\ast(s')$, since it's future, $\gamma U^\ast(s')$
-the total reward of new state s': $\left[ R(s, a, s') + \gamma U^\ast(s') \right]$</li>
-</ol>
-<p>but which new state we will fall into is uncertain, thus we need to plus all reward of new states with $T(s, a, s')$, add up and get a expectation(avg)
-$$Q^\ast(s, a) = \sum_{s'} T(s, a, s') \times \left[ R(s, a, s') + \gamma U^\ast(s') \right]$$
-The equation creates a dynamic programming problem.</p>
-<h3>Value iteration</h3>
-<h3>Policy iteration</h3>
-<h2>TD learning</h2>
-<h2>Q-learning</h2>
+                <div id="excerpt"><h1>Definations</h1>
+<p>• Agent:</p>
+<p>An entity that <strong>interacts with the environment</strong> by observing states, <strong>taking actions</strong>, and receiving rewards. Its goal is to find an optimal policy that <strong>maximizes the expected cumulative reward</strong> (or long-term return) over time.</p>
+<p>• Environment:</p>
+<p>The <strong>external system</strong> with which the agent interacts. It is formally defined by a set of states ($S$), a set of actions ($A$), <strong>transition probabilities ($T$)</strong>, and a <strong>reward function ($R$)</strong>. It responds to the agent's actions and dictates the next state and immediate reward.</p>
+<p>• Policy $\pi$：</p>
+<p>A <strong>mapping (or function) from states</strong> to actions. It <strong>defines the agent's behavior</strong> by specifying which action $a \in A$ to choose (or the probability distribution over actions) when in a given state $s \in S$. Denoted as <strong>$\pi(s) = a$.</strong></p>
+<p>• Reward</p>
+<p>A <strong>scalar feedback signal</strong> returned by the environment after the agent transitions from state $s$ to $s'$ via action $a$. It evaluates the <strong>immediate success</strong> of an action and is represented mathematically as a function <strong>$R(s, a, s')$</strong>.</p>
+<p>• State</p>
+<p>A formal <strong>representation of the environment</strong> at a specific moment in time. In an MDP, a state must satisfy <strong>the Markov property</strong>, meaning it captures all relevant information from the past such that the future <strong>depends only on the current state</strong>, not on the sequence of past states.</p>
+<p>discount: the decrease rate of future rewards</p>
 
             &nbsp;
             <span id="readmore">
@@ -551,11 +547,7 @@ footer p {
   </ul>
 </main>
 
-<div id="back-home" class="serio">
-  <a href="/">
-    <img src="/assets/blog/backhome.webp" alt="Back to home"/>
-  </a>
-</div>
+
 
 </div>
       </main>

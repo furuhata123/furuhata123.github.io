@@ -1,9 +1,7 @@
 [
   {
-    "id": " ",
-    "category": "base",
     "title": "chap1",
-    "status": { "summary": false, "exercises": false },
-    "links": []
+    "rating":"5",
+    "comment":" "
   }
 ]

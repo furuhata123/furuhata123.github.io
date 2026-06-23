@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Quick handbook of software engineering</title>
+    <link rel="stylesheet" href="/assets/blog-post.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" rel="stylesheet"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-ruby.min.js"></script>
+    <link rel="stylesheet" href="/assets/markdown.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <a href="/blog/">
+          <div class="serio" id="back-button">
+            <span class="block-line">
+              <span style="color:#00ff6b">←&nbsp;</span>
+              <span>
+                <span style="color:#2aff00">B</span>
+                <span style="color:#ff9300">A</span>
+                <span style="color:#c000ff">C</span>
+                <span style="color:#ff00c7">K</span></span></span>
+          </div>
+        </a>
+        
+        <img src="/assets/blog/0110.png" alt="deco" style="display:block;margin:0 auto;">
+      </aside>
+
+      <main>
+        <div id="post-header"></div>
+        <a href="">Quick handbook of software engineering</a>
+      </br>
+      <small>
+        2026-06-20
+      </small>
+      <div class="post-content">
+        <h1>life cycle</h1>
+<h2>Development</h2>
+<ol>
+<li>Requirement Analysis Phase: In this phase, software engineers interact with stakeholders to <strong>specify the services and constraints</strong> of the software system, identify any <strong>conditions</strong> on the services, define how outside world will interact with the system. The goal is to understand the problem fully and document all requirements.</li>
+<li>Design Phase: <strong>Designing a plan for the constructions of the proposed system.</strong> It establishes the internal structure of the system, including its software architecture, database design, and user interfaces, based on the SRS</li>
+<li>Implementation Phase: <strong>actual writing of programs</strong> It translates the design specifications into <strong>executable source code</strong>. It also includes <strong>unit testing</strong> written by the developers themselves</li>
+<li>Testing Phase: In this phase, the software is rigorously evaluated to ensure it meets the original requirements and is free of defects (bugs). It involves running the system under various conditions to verify its correctness and reliability. (<strong>debugging, confirming compatible with the requirements</strong>)</li>
+</ol>
+<!-- readmore -->
+<h3>development methdologies</h3>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>concept</th>
+<th>pros</th>
+<th>cons</th>
+<th>best applications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>waterfall</td>
+<td><strong>Strict linear sequential flow.</strong> Each phase must be fully completed with documentation before the next phase begins. <strong>No backtracking</strong>.</td>
+<td><strong>Structure</strong>: Highly structured, clear, and easy to manage. <strong>Clear Documentation</strong>: Every stage has strict deliverables and records.</td>
+<td><strong>Inflexible</strong>: Extremely rigid; accommodating change in requirements mid-way is very difficult. <strong>Late Working Software</strong>: A working product is not available until late in the lifecycle, increasing risk.</td>
+<td>Projects with well-defined, stable requirements and mature technologies.</td>
+</tr>
+<tr>
+<td>incremental</td>
+<td>Splits the software into multiple <strong>functional modules (increments)</strong>. Each module is developed completely through the stages and delivered like building blocks.</td>
+<td><strong>Early Delivery</strong>: High-priority core software functions can be delivered early. <strong>Lower Initial Risk</strong>: Reduces the initial financial and time risks of the development process.</td>
+<td><strong>High Architecture Demand</strong>: Requires a perfect top-level system architecture design to integrate later increments. <strong>Total Cost</strong>: Total cost might be higher than the traditional waterfall model.</td>
+<td>Large projects where requirements are relatively clear, but phased delivery of core functions is required.</td>
+</tr>
+<tr>
+<td>iterative</td>
+<td>Develops <strong>a very rough but complete version</strong> of the system first, then continuously enhances, refactors, and perfects it through <strong>multiple cycles</strong>(iterations).</td>
+<td><strong>Flexible</strong>: Highly adaptable; allows requirements to evolve and change after each iteration. <strong>Continuous Feedback</strong>: Enables continuous improvement based on real user feedback.</td>
+<td><strong>Scope Creep</strong>: Highly prone to uncontrolled expansion of requirements (scope creep). <strong>Hard to Budget</strong>: Difficult to estimate final costs and timelines accurately at the project's start.</td>
+<td>Modern web/startup projects where requirements are unclear, highly dynamic, or exploratory.</td>
+</tr>
+</tbody>
+</table>
+<p>also there is agile method, It completely abandons the heavy documentation and rigid planning of Waterfall. It focuses on flexibility, rapid responses to changing requirements, and close collaboration with users through very short development cycles (sprints).</p>
+<p><strong>prototyping</strong>: in incremental-&gt;evolutionary prototyping, iterative-&gt;throwaway, rapid. validating ideas, gathering feedback, testing feasility, minimize rework.</p>
+<h1>modularity</h1>
+<p>the division of software into manageable units, generically called modules, each of which deals with only a part of the software’s overall
+responsibility.</p>
+<h2>coupling</h2>
+<p><strong>independence among modules</strong>, whether changes in one module will unknowingly
+affect other modules in the system</p>
+<h3>types of coupling</h3>
+<ol>
+<li>control coupling: occurs when a module passes control of execution to another, as in a procedure call</li>
+<li>data coupling: <strong>the sharing of data between modules.</strong> If two modules interact with the same item of data, then modifications made to one module may affect the other, and modifications to the format of the data itself could have repercussions in both modules.</li>
+</ol>
+<p><strong>global data</strong>, which are data items that are automatically available to all modules throughout the system, as opposed to local data items that are accessible only within a particular module unless explicitly passed to another</p>
+<h2>cohesion</h2>
+<p><strong>the internal binding within each module</strong></p>
+<h3>types of cohension</h3>
+<ol>
+<li>logical cohesion: the cohesion within a module induced by the fact that its internal elements perform activities logically similar in nature</li>
+<li>functional cohesion: all the parts of the module are focused on the performance of a single activity</li>
+</ol>
+<h2>Information Hiding</h2>
+<p>the restriction of information to a specific portion of a software system. (knowledge about the structure and contents of a program unit)</p>
+<p>The point of information hiding is to keep the actions of modules from having unnecessary dependencies or effects on other modules.</p>
+<h2>components</h2>
+<p>a reusable unit of software. differences</p>
+<p>component architecture</p>
+<h1>Tools</h1>
+<p>dataflow diagram</p>
+<h2>UML</h2>
+<h3>use case diagram</h3>
+<p>use case(interactions between system and users)</p>
+<p>actors(users)</p>
+<h3>class diagram</h3>
+<p>the structure of classes and relationships between classes</p>
+<p>relationships: one-to-one, one-to-many, many-to-many</p>
+<h3>interaction diagrams: sequence diagram</h3>
+<p>depicts the communication between the individuals</p>
+<p>(such as actors, complete software components, or individual objects) that are involved in performing a task.</p>
+<p>lifeline, frame, interaction fragments</p>
+<h1>Testing</h1>
+<h2>methodology</h2>
+<ul>
+<li>glass-box testing
+the softwaretester is aware of the interior structure of the software and uses this knowledge</li>
+</ul>
+<p><strong>Pareto principle</strong>: results can often be increased most rapidly by applying efforts in a concentrated area.</p>
+<p><strong>basis path testing</strong>: develop a set of test data that insures that each instruction in the software is executed at least once</p>
+<ul>
+<li>black-box testing
+tests that do not rely on knowledge of the software’s interior composition. In short, black-box testing is performed from the user’s point of view.</li>
+</ul>
+<p><strong>boundary value analysis</strong>: equivalence classes</p>
+<p><strong>beta/alpha testing</strong></p>
+<h1>maintain</h1>
+<p><strong>user documentation</strong>: explain the features of the software and describe how to use them. It is intended to be read by the user of the software and is therefore expressed in the terminology of the application.
+<strong>system documentation</strong>: describe the software’s internal composition so that the software can be maintained later in its life cycle.
+<strong>technical documentation</strong>:  describe how a software system should be installed and serviced</p>
+
+      </div>
+    </br>
+    <p>Tags:
+      &nbsp
+      blog
+    </p>
+  </main>
+
+</div>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']], 
+      displayMath: [['$$', '$$']],
+      processEscapes: true
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
