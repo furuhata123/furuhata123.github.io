@@ -8,6 +8,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("blog", function (collectionApi) {
         return collectionApi.getFilteredByTag("blog");
     });
+    eleventyConfig.addCollection("log", function (collectionApi) {
+        return collectionApi.getFilteredByTag("log");
+    });
 
 
     // 摘要短代码

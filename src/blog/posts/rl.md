@@ -24,9 +24,17 @@ A **scalar feedback signal** returned by the environment after the agent transit
 
 A formal **representation of the environment** at a specific moment in time. In an MDP, a state must satisfy **the Markov property**, meaning it captures all relevant information from the past such that the future **depends only on the current state**, not on the sequence of past states.
 
-discount: the decrease rate of future rewards
+**discount**: the further future expectations get, the less important it is to current state's expectation value. discouting rate(gamma) is [0,1], when it approachs 0, the agent gets more short-sighted
+
+**Regret** is the difference between the maximum possible total reward (under the optimal policy) and the actual accumulated reward obtained by the agent.
 
 <!-- readmore -->
+
+• Transition function
+
+• **Learning rate**: a tuning parameter in an optimization algorithm that determines **the step size** at each iteration while **moving toward a minimum of a loss function**.
+
+• regret
 
 # Markov Decision Process (MDP)
 when there are multiple subsequent states following one action.
@@ -142,4 +150,40 @@ $$
 Q(s, a) \leftarrow (1-\alpha)Q(s,a) + \alpha[R(s, a, s') + \gamma \max_{a'} Q(s', a')]
 $$
 ACTUALLY THE SAME
+# Exploration-Exploitation Dilemma
+Exploration（探索）：
+去尝试那些未知或者目前看起来不是最优的动作。它的目的是为了收集更多环境的信息，发现可能存在的潜在高奖励。
+
+比喻： 每次去餐厅都点没吃过的菜，虽然有踩雷的风险，但也可能发现新大陆。
+
+Exploitation（利用）：
+总是选择当前已知能够带来最高奖励的动作。它的目的是最大化眼前的利益，利用现有的知识。(Local Optimum)
+
+比喻： 每次去餐厅都只点那道最喜欢的招牌菜，绝对稳妥，但也永远不会知道别的菜有多好吃了。
+
+探索函数 $f(Q, N)$
+$$f(Q(s,a), N(s,a)) = \begin{cases} R^+ & \text{if } N(s,a) < N_e \\ Q(s,a) & \text{otherwise} \end{cases}$$
+- $N(s,a)$：在这个状态 $s$ 下，动作 $a$ 已经被尝试过的总次数。
+- $N_e$：一个人为设定的门槛值。意思是：“任何一个选择，至少得试够 $N_e$ 次，才有资格评判它好不好。”
+- $R^+$：一个极度乐观的最高奖励预估值（比如给一个超大的正数）。
+
+
+如果尝试次数不够（$N < N_e$）：探索函数直接返回一个极高的奖励 $R^+$。智能体就会觉得：“这个我还没怎么试过，它一定藏着巨大的宝藏！” 从而被强行吸引过去探索。如果试够了（$N \ge N_e$）：探索函数就回归理性，返回它真正的、客观的 $Q(s,a)$ 值。
+
+“面对不确定性时的乐观主义”（Optimism in the Face of Uncertainty）
 ## Epsilon-Greedy
+最简单也最常用的一种方法。
+
+1. 以 $1 - \epsilon$ 的概率选择当前最优的动作（Exploitation）。
+2. 以 $\epsilon$ 的概率随机选择一个动作（Exploration）。
+3. 进阶： 通常会让 $\epsilon$ 随着时间衰减（Decay）。刚开始 $\epsilon=1.0$ 全力探索，到后期 $\epsilon$ 趋近于 0，专注于利用。
+## Upper Confidence Bound
+这是一种“带有乐观色彩”的探索机制。它不仅看一个动作当前的平均奖励，还要看这个动作被尝试的次数。
+
+如果一个动作很少被尝试，它的不确定性（置信区间）就很宽。
+
+UCB 会优先选择那些可能带来高收益或者太久没被尝试的动作。公式通常表现为：
+$$Q(a) + c \sqrt{\frac{\ln t}{N(a)}}$$
+其中 $N(a)$ 是动作 $a$ 被尝试的次数。次数越少，后面那一项（不确定性奖励）就越大，从而促使智能体去探索它。
+## Thompson Sampling
+一种贝叶斯方法。它为每个动作的奖励维护一个概率分布而不是一个固定的数值。每次决策时，从每个动作的分布中抽样一个值，然后选择对应最大抽样值的动作。这种方法天然地平衡了探索与利用。

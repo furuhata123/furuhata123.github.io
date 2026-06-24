@@ -189,10 +189,11 @@ learning: to gain knowledge from experience/being taught
 
 learning analytics cycle
 
-## common data model/store
-## quantitative
+## common data model/store visualizations
+### quantitative
 moving avg, box plot, density map
-## hierarchical
+### hierarchical
 cluster dendrogram, treemap
-## network
+### network
 sanky diagram, chord diagram, node/vertax graph
+

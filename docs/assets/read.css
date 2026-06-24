@@ -5,4 +5,15 @@
 
 html{
     background-image: url('/assets/read/0388.gif');
+    
+}
+ #post-list {
+    list-style: none;
+ }
+.post {
+    display: flex;
+}
+
+.post>.content {
+    margin-left: auto;
 }

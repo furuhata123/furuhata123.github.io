@@ -212,7 +212,8 @@
 <p>A <strong>scalar feedback signal</strong> returned by the environment after the agent transitions from state $s$ to $s'$ via action $a$. It evaluates the <strong>immediate success</strong> of an action and is represented mathematically as a function <strong>$R(s, a, s')$</strong>.</p>
 <p>• State</p>
 <p>A formal <strong>representation of the environment</strong> at a specific moment in time. In an MDP, a state must satisfy <strong>the Markov property</strong>, meaning it captures all relevant information from the past such that the future <strong>depends only on the current state</strong>, not on the sequence of past states.</p>
-<p>discount: the decrease rate of future rewards</p>
+<p><strong>discount</strong>: the further future expectations get, the less important it is to current state's expectation value. discouting rate(gamma) is [0,1], when it approachs 0, the agent gets more short-sighted</p>
+<p><strong>Regret</strong> is the difference between the maximum possible total reward (under the optimal policy) and the actual accumulated reward obtained by the agent.</p>
 
             &nbsp;
             <span id="readmore">
