@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'antique';
+    src: url('/assets/fonts/ANTIQUE-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 *{
     margin:0;
     padding:0;
@@ -6,6 +12,20 @@
 html{
     background-image: url('/assets/read/0388.gif');
     
+}
+body{
+    color: #493D3A; 
+    font-family: 'Times New Roman', serif;
+}
+#header{
+    font-family: "antique", Georgia, serif;
+    font-size: large;
+    color: #927a77;
+}
+.devider{
+    width: 100%;
+    margin: 1em 0;
+    filter: sepia(0.5) opacity(0.7);
 }
  #post-list {
     list-style: none;

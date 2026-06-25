@@ -2,9 +2,16 @@
 layout: read.njk
 title: Reading Log
 ---
-<p>
-    明天写css样式
-</p>
+<div class="bulletin">
+    <div class="now-reading">
+    </div>
+
+    <div class="to-read">
+    </div>
+</div>
+
+<img src="/assets/read/line23.gif" alt="Devider" class="devider" />
+
 <ul id="post-list">
     {% for post in collections.log | reverse %}
         <li>
@@ -46,6 +53,8 @@ title: Reading Log
                 <div id="content">{{ post.templateContent | safe }}
                 </div>
             </div>
+
+            
         </li>
     {% endfor %}
 </ul>
