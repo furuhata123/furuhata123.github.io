@@ -4,9 +4,20 @@ title: Reading Log
 ---
 <div class="bulletin">
     <div class="now-reading">
+        <p id="now-reading">✦ Now Reading...</p>
+        <ol id="now-list">
+            <li>sample1</li>
+            <li>sample2</li>
+        </ol>
     </div>
 
     <div class="to-read">
+        <p id="to-read">✦ To read...</p>
+        <ol id="to-list">
+            <li>sample1</li>
+            <li>sample2</li>
+            <li>sample3</li>
+        </ol>
     </div>
 </div>
 
@@ -16,21 +27,28 @@ title: Reading Log
     {% for post in collections.log | reverse %}
         <li>
             <div class="post">
-                <div class="info">
+                
                 <div class="cover">
                     {% if post.data.cover %}
                         <img src="{{ post.data.cover }}" alt="Cover for {{ post.data.title }}" class="post-cover" loading="lazy" />
                     {% else %}
-                        <p>No cover image</p>
+                        <img src="https://images-na.ssl-images-amazon.com/images/G/01/digital/fiona/myx/MYX-Docs-Icons-02.SX150.png" alt="No cover available" class="post-cover" loading="lazy" />
                     {% endif %}
                 </div>
 
+            <div class="info">
                 <div class="title">
-                {{ post.data.title }}
+                <p id="title">{{ post.data.title }}</p>
+                <!--
                 <small>
                     {{ post.date | date("yyyy-MM-dd") }}
                 </small>
                 </div>
+                -->
+                <div class="author">
+                    {% if post.data.author %}
+                        <p id="author">By: {{ post.data.author }}</p>
+                    {% endif %}
 
                 <div class="tags">
                 <p class="post-tags">
@@ -47,13 +65,12 @@ title: Reading Log
                     {% endif %}
                 </p>
                 </div>
-                </div>
 
             <div class="content">
                 <div id="content">{{ post.templateContent | safe }}
                 </div>
             </div>
-
+        </div>
             
         </li>
     {% endfor %}

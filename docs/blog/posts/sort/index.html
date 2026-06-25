@@ -145,7 +145,45 @@ But stuff like bubble sort, which only call itself once (Single Recursion) is a 
 The height of the tree is how many pieces we cut the question into</p>
 <p>There is also... something based on graphs. If you think about Fibonacci sequence, F(5)=F(4)+F(3), F(4)=F(3)+F(2), WHERE F(3) was called twice. If we take each call as a node...(?)</p>
 <h1>Searchings</h1>
+<ul>
+<li>状态空间（State Space $S$）：所有可能存在的世界状态的集合。</li>
+<li>初始状态（Initial State $s_0$）：エージェント（智能体）开始的起点。</li>
+<li>动作（Actions $A(s)$）：在某个状态下可以采取的合法操作。</li>
+<li>转移模型（Transition Model / Successor Function）：输入当前状态和动作，返回结果状态以及对应的步骤代价（Step Cost $c(s, a, s')$）。</li>
+<li>目标测试（Goal Test $G(s)$）：判断当前状态是否达到了最终目标的测试。</li>
+</ul>
+<h2>Uninformed Search</h2>
 <p>Two very instinctive approach are sequence search and binary search</p>
+<h3>Depth-First Search</h3>
+<p>LIFO Stack to manage fringe</p>
+<p>ultility:</p>
+<ol>
+<li>space complexity $O(bm)$, b is branching factor, m is max depth</li>
+<li>possible dead loop, always finding the leftest solution rather than the best</li>
+</ol>
+<h2>Breadth-First Search</h2>
+<p>FIFO Queue
+ultility:</p>
+<ol>
+<li>space complexity $O(b^s)$, s is the depth of shallowest solution</li>
+<li>complete; best only when each step's cost is the same</li>
+</ol>
+<h2>Uniform Cost Search</h2>
+<p>always expands the node where Backward Cost $g(n)$ is the smalleat.</p>
+<p>Priority Queue</p>
+<p>~Dijkstra</p>
+<h1>Informed Search</h1>
+<p>Heuristic Function $h(n)$, estimate the cost from current node to goal</p>
+<h2>Greedy Search</h2>
+<p>每次都优先展开 $h(n)$ 最小（即看起来离目标最近）的节点. 容易被错误的诱导带偏，最坏情况下会退化成像 DFS 一样糟糕，既不完整也不最优</p>
+<h2>A* Search</h2>
+<p>$$f(n) = g(n) + h(n)$$
+其中 $g(n)$ 是从起点到当前节点的实际代价，$h(n)$ 是估计的剩余代价。每次优先展开 $f(n)$ 最小的节点。</p>
+<p>只有当Goal被从优先队列中弹出来（Remove-Front）时，搜索才宣告结束。仅仅看到它进入队列是不能停止的，因为后面可能还有更好的路径。</p>
+<h3>Admissibility</h3>
+<p>to ensure A* tree search find the best solution. h(n) must be admissible:
+$$0 \le h(n) \le h^<em>(n)$$
+$h^</em>(n)$ 是实际到目标的真实最小代价。这意味着它绝不能高估实际代价。</p>
 
       </div>
     </br>

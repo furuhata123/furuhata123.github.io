@@ -2,7 +2,8 @@
 title: test
 tags: ['log','test']
 date: 1970-01-01
-cover: "https://images-na.ssl-images-amazon.com/images/G/01/digital/fiona/myx/MYX-Docs-Icons-02.SX150.png"
+cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1390173939i/3227607.jpg"
+author: anon
 ---
 除了安靜的時間，你不需要任何東西才可練習冥想，換句話說，清晨起床或是夜深臨睡前都適合冥想。
  

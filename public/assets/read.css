@@ -4,6 +4,12 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'newspaper';
+    src: url('/assets/fonts/NEWSPAPER.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 *{
     margin:0;
     padding:0;
@@ -22,6 +28,42 @@ body{
     font-size: large;
     color: #927a77;
 }
+#header h1{
+    font-size: 2.5em;
+    font-weight: 200;
+}
+
+.bulletin{
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.bulletin::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 20px;
+    width: 100%;
+    left: 0;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
+    background-size: 200%;
+  }
+#now-reading,#to-read{
+    font-family: "newspaper", Georgia, serif;
+    font-size: 1.3em;
+    font-weight: 100;
+
+    color:#d79281;
+
+    padding: 0.5em;
+}
+#to-read{
+    color:#85bcb7;
+}
+#now-list,#to-list{
+}
+
 .devider{
     width: 100%;
     margin: 1em 0;
@@ -34,6 +76,42 @@ body{
     display: flex;
 }
 
-.post>.content {
+.cover{
+    padding-top: 1.5em;
+}
+.cover img{
+    max-width: 150px;
+    height: auto;
+}
+
+.info {
+    padding: 1em;
+    padding-top: 0;
+}
+.title {
     margin-left: auto;
+}
+#title{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.post-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.tag-item{
+    display: inline-block;
+    padding: 2px 4px;
+    color:#927a77;
+    background-color: #d8fcf9;
+    border-bottom:#d4c7c5 solid 1px;
+    border-right: #d4c7c5 solid 1px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.tag-item:hover{
+
+    background-color:#bdf0ff;
 }

@@ -37,8 +37,9 @@ main::after{
     background-image: url('/assets/read/header.jpg');
     
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    padding-left: 1em;
     min-height: 200px;
 }
 #content{

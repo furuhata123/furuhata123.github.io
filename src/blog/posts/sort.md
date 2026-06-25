@@ -116,4 +116,43 @@ The height of the tree is how many pieces we cut the question into
 There is also... something based on graphs. If you think about Fibonacci sequence, F(5)=F(4)+F(3), F(4)=F(3)+F(2), WHERE F(3) was called twice. If we take each call as a node...(?)
 
 # Searchings
+- 状态空间（State Space $S$）：所有可能存在的世界状态的集合。  
+- 初始状态（Initial State $s_0$）：エージェント（智能体）开始的起点。  
+- 动作（Actions $A(s)$）：在某个状态下可以采取的合法操作。  
+- 转移模型（Transition Model / Successor Function）：输入当前状态和动作，返回结果状态以及对应的步骤代价（Step Cost $c(s, a, s')$）。  
+- 目标测试（Goal Test $G(s)$）：判断当前状态是否达到了最终目标的测试。
+
+## Uninformed Search
 Two very instinctive approach are sequence search and binary search
+### Depth-First Search
+LIFO Stack to manage fringe
+
+ultility: 
+1. space complexity $O(bm)$, b is branching factor, m is max depth
+2. possible dead loop, always finding the leftest solution rather than the best
+
+## Breadth-First Search
+FIFO Queue
+ultility: 
+1. space complexity $O(b^s)$, s is the depth of shallowest solution
+2. complete; best only when each step's cost is the same
+
+## Uniform Cost Search
+always expands the node where Backward Cost $g(n)$ is the smalleat.
+
+Priority Queue
+
+~Dijkstra
+# Informed Search
+Heuristic Function $h(n)$, estimate the cost from current node to goal
+## Greedy Search
+每次都优先展开 $h(n)$ 最小（即看起来离目标最近）的节点. 容易被错误的诱导带偏，最坏情况下会退化成像 DFS 一样糟糕，既不完整也不最优
+## A* Search
+$$f(n) = g(n) + h(n)$$
+其中 $g(n)$ 是从起点到当前节点的实际代价，$h(n)$ 是估计的剩余代价。每次优先展开 $f(n)$ 最小的节点。
+
+只有当Goal被从优先队列中弹出来（Remove-Front）时，搜索才宣告结束。仅仅看到它进入队列是不能停止的，因为后面可能还有更好的路径。
+### Admissibility
+to ensure A* tree search find the best solution. h(n) must be admissible:
+$$0 \le h(n) \le h^*(n)$$
+$h^*(n)$ 是实际到目标的真实最小代价。这意味着它绝不能高估实际代价。  
