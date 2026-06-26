@@ -39,16 +39,18 @@ body{
     max-width: 600px;
     margin: 0 auto;
 }
-.bulletin::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    height: 20px;
-    width: 100%;
-    left: 0;
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
-    background-size: 200%;
-  }
+#bulletin{
+    width:fit-content;
+    padding: 1em;
+    background-image: url('/assets/read/SB016.jpg') ;
+    mask-image: linear-gradient(to bottom, transparent, black 5%, black 87%, transparent),
+              linear-gradient(to right, transparent, black 5%, black 90%, transparent);
+  -webkit-mask-composite: destination-in;
+}
+#list-content td{
+    padding-left: 1em;
+    padding-right: 1em;
+}
 #now-reading,#to-read{
     font-family: "newspaper", Georgia, serif;
     font-size: 1.3em;
@@ -61,7 +63,10 @@ body{
 #to-read{
     color:#85bcb7;
 }
-#now-list,#to-list{
+#now-list li,#to-list li{
+    display: flex;
+    justify-content: center;
+    
 }
 
 .devider{
@@ -114,4 +119,70 @@ body{
 .tag-item:hover{
 
     background-color:#bdf0ff;
+}
+
+#back-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    font-family: 'newspaper', Georgia, serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    color:#493D3A;
+}
+#back-top:hover{
+    color:#927a77;
+}
+#back-home{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    font-family: 'antique', Georgia, serif;
+    font-size: 2em;
+    text-decoration: none;
+    color:#493D3A;
+}
+#back-home:hover{
+    color:#927a77;
+}
+#back-top-mob{
+    display: none;
+}
+
+@media screen and (max-width: 1154px) {
+    .back-home{
+        display: none;
+    }
+
+    #back-top{
+        display: none;
+    }
+    
+    #back-top-mob{
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+
+        font-family: 'newspaper', Georgia, serif;
+        font-size: 1.5em;
+        text-decoration: none;
+        color:#493D3A;
+    }
+    #back-top-mob:hover{
+        color:#927a77;
+    }
+    #pink{
+        background-color: #b9f2ed;
+    }
 }
