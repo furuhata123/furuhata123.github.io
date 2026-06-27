@@ -1,19 +1,20 @@
 ---
-title: test
-tags: ['log','test']
-date: 1970-01-01
-cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1390173939i/3227607.jpg"
-author: anon
+title: Penpal
+tags: ['log','fiction','horror']
+cover: "https://upload.wikimedia.org/wikipedia/en/5/5d/Penpal_cover_Auerbach.jpg"
+author: Dathan Auerbach
 ---
-除了安靜的時間，你不需要任何東西才可練習冥想，換句話說，清晨起床或是夜深臨睡前都適合冥想。
- 
-說到冥想，普遍人都會聯想到是保持靜止，但其實冥想時不一定要限制自己的動作或坐立不安。相反，冥想是闗於正念的修練，即是承認自己的存在，意識到自己身處何方和所作何事。正念讓你意識到你當下的想法和情緒，這樣你就可以更好地進行調節。
- 
-正如美國心理學會所說，這種安靜的反思包括不加判斷地觀察自身的感受和感覺。「與其對這些想法或感覺作出反應，你的目標應該是承認它們的存在並放下。」
- 
-哈佛大學校報有一種正念冥想的技巧，非常適合初學者。這是一個呼吸練習，你可以在起床後坐在床上或椅子上進行。
- 
-先找個地方，舒服地坐下。放鬆肩膀，把雙手放在膝蓋或兩旁。
-閉上眼睛，觀察自己的呼吸。吸氣和呼氣時不要用力。專注於腹部的起伏。
-試下數數字來幫助你保持專注。分心了嗎？意識到這點是好的。把它當作給你的提示，讓注意力重新回到呼吸上。
-剛開始時可以這樣做五分鐘，然後逐漸將時間增加到每日十分鐘。
+I have a deep affection for horror stories devoid of supernatural elements, the true form of horror lies in the subtle, microscopic-level details, and *Penpal* does a great job capturing this in its opening chapters. For the most part, the narrative progresses without any overt, "real" conflict until the final chapter, which, in my opinion, stands as the book's major flaw. 
+
+<br>
+When discussing horror that excludes ghosts, clowns, aliens, or Cthulhu mythos, what I look for is a sense of uncanny intrusion. Consider this distinction: finding a stranger's footprints in the snow in front of your doorstep is mildly unsettling, but finding bare footprints in the snow within your private backyard is bone-chilling. Did you get the difference? In the first few chapters, the narrator as a kid remains unaware of the danger surrounding, it is only upon looking back as an adult that he recognizes those disturbing details 
+
+<details>
+  <summary>hinting that</summary>
+  he was being stalked by a local pervert who had captured his balloon containing a self-addressed letter. However, I was deeply dissatisfied with how the stalker was depicted almost like a romantically obsessed lover who went so far as to murder the narrator's best friend and crush out of jealousy. In reality, these types of criminals are selfish a$$h0l3s, they hope to increase their victims rather than devoting to one. (That's the reason of Father-stalker Theory)
+</details>
+ <br>
+<details>
+  <summary>Also, I might be missing some details, but...</summary>
+  There is absolutely no way the villain is the narrator's father, despite him being raised by a single mother from the very beginning. Had it been the father, the mother would have recognized his body in the final chapter. Furthermore, the probability of the narrator's father happening to catch that specific balloon is near zero. A narrative reliant on too many cheap coincidences becomes lame, conversely, a creepy stranger picking up the letter by chance is a perfectly reasonable and realistic dose of horror.
+</details>

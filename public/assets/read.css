@@ -33,6 +33,17 @@ body{
     font-weight: 200;
 }
 
+.motto{
+    display: flex;
+    justify-content: center;
+}
+#motto{
+    font-family: "antique", Georgia, serif;
+    font-size: 1.5em;
+    font-weight: 100;
+    color:#1E55EE;
+}
+
 .bulletin{
     display: flex;
     justify-content: space-around;
@@ -56,12 +67,12 @@ body{
     font-size: 1.3em;
     font-weight: 100;
 
-    color:#d79281;
+    color:#c47a68;
 
     padding: 0.5em;
 }
 #to-read{
-    color:#85bcb7;
+    color:#5d9c97;
 }
 #now-list li,#to-list li{
     display: flex;
