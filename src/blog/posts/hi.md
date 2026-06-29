@@ -154,7 +154,9 @@ VR AR painter gusture tabletop robot natruallanguage tangible pysical
 | **Direct Obs. (Lab)** | Capturing **individual behaviors and actions** in detail. | Both **Quantitative & Qualitative**. | **Free from external interruptions**, allowing users to focus entirely on specific tasks. | Because the conditions are **artificial/simulated**, results may have limited applicability to real-world environments. | • *Raw:* Interaction logs, task completion times, demographic data.<br>• *Pre-processing:* Transcription, expanding notes, synchronizing recording timelines. | Usually conducted in a usability lab with specific task sheets. |
 | **Indirect Obs.** | Observing users and **automatically capturing data** without disrupting them. | **Quantitative** (logs) & **Qualitative** (diaries). | • Users are not distracted by the data gathering process.<br>• Automation enables **long-term observation**. | • Analyzing massive amounts of quantitative log data **requires specialized software tools**.<br>• Participants' memories in **diaries may be exaggerated or biased**. | • *Raw:* **System log data**, user diary entries.<br>• *Pre-processing:* Filtering log data, cross-checking and aligning multi-source datasets. | Most natural user experience since no observer is physically present. |
 
-# Social interaction
+<details>
+<summary># Social interaction</summary>
+
 Awareness, copresence, communication, collabration
 
 **awareness is an understanding of the activities of others, which provides a context for your own activity**
@@ -197,3 +199,10 @@ cluster dendrogram, treemap
 ### network
 sanky diagram, chord diagram, node/vertax graph
 
+</details>
+
+# Evaluation
+what is evaluation: process of assessing a system's usability, functionality, and the overall user experience
+
+and why evaluation is important： Identifying Usability Issues, Validating Design Decisions,
+##

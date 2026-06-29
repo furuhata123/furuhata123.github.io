@@ -2,60 +2,61 @@
 layout: layout.njk
 title: 首页
 ---
-
-<section class="main-home">
-
-    <div class="left" id="sidebar">
-        <div class="miscbox">
-            <img src="{{ '/assets/main/mainsite.GIF' | url }}" alt="void-banner" style="height:88px;"/>
-            <p>
-                Likey? Feel free to link me:
-            </p>
-            <div class="code-wrapper">
-                <button class="copy-btn">Copy</button>
-                <pre class="code-block" id="code-to-copy">
-&lt;a href="https://voidhead.net/" target="_blank" rel="voidhead"&gt;
-    &lt;img src="https://voidhead.net/assets/main/mainsite.GIF" alt="voidhead.net" style="height:31px;" /&gt;
-&lt;/a&gt;
-  </pre>
-            </div>
-
-            <div class="images">
-                <img src="{{ '/assets/main/bo02h.jpg' | url }}"/>
-                <img src="{{ '/assets/main/bo02j.jpg' | url }}"/>
-                <img src="{{ '/assets/main/bo02m.jpg' | url }}"/>
-
-                <a href="http://www.ankokukoubou.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ '/assets/main/external/ankokubana.gif' | url }}" alt="暗黒工房"/>
-                </a>
-                <p>放图的:</p>
-                <a href="http://pratibimba.neocities.org" target="_blank" rel="pratibimba">
-                    <img src="{{ '/assets/main/pratibimba.GIF' | url }}" alt="pratibimba-banner" style="height:31px;"/>
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="center">
-
-        <div class="garden">
-            <picture>
-                <source srcset="{{ '/assets/main/garden-mob.webp' | url }}" media="(max-width: 768px)">
-                <img src="{{ '/assets/main/garden.webp' | url }}" alt="garden"/>
-            </picture>
-        </div>
-
-    </div>
-
-    <div class="shadow-box" id="top-menu">
+<div class="left" id="sidebar">
+    <div class="nav">
+        <div class="nav-title"><img src="{{ '/assets/main/nav-title.png' | url }}" alt="nav Image"/></div>
         <nav class="menu">
-            <a class="torn-left" href="{{ '/blog' | url }}">blog</a>
-            <a class="torn-left dotted-hover" href="{{ '/dream' | url }}">dream</a>
-
-            <!-- <a class="torn-left" href="{{ '/hobby' | url }}">hobby</a> -->
+            <a href="{{ '/blog' | url }}">♦ blog</a>
+            <a href="{{ '/dream' | url }}">♦ dream</a>
+            <a href="{{ '/reading' | url }}">♦ reading</a>
 
         </nav>
     </div>
 
-</section>
+    <div class="miscbox">
+        
+        
+                <p id="divider">────── ⋆⋅☆⋅⋆ ──────</p>
+
+                <p>
+                Likey? Feel free to link me:
+            </p>
+        <div class="code-wrapper">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-block" id="code-to-copy">
+&lt;a href="https://voidhead.net/" target="_blank" rel="voidhead"&gt;
+    &lt;img src="https://voidhead.net/assets/main/mainsite.GIF" alt="voidhead.net" style="height:31px;" /&gt;
+&lt;/a&gt;
+  </pre>
+        </div>
+
+        <div class="images">
+            <img src="{{ '/assets/main/bo02h.jpg' | url }}"/>
+            <img src="{{ '/assets/main/bo02j.jpg' | url }}"/>
+            <img src="{{ '/assets/main/bo02m.jpg' | url }}"/>
+
+            <a href="http://www.ankokukoubou.com/" target="_blank" rel="noopener noreferrer">
+                <img src="{{ '/assets/main/external/ankokubana.gif' | url }}" alt="暗黒工房"/>
+            </a>
+            <p>stamps!</p>
+            <img src="{{ '/assets/main/mainsite.GIF' | url }}" alt="void-banner" style="height:31px;"/>
+            <a href="http://pratibimba.neocities.org" target="_blank" rel="pratibimba">
+                <img src="{{ '/assets/main/pratibimba.GIF' | url }}" alt="pratibimba-banner" style="height:31px;"/>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<div class="center">
+
+    <div class="garden">
+        <picture>
+            <img src="{{ '/assets/main/garden-mob.webp' | url }}" alt="garden" id="garden"/>
+        </picture>
+    </div>
+
+    <img src="{{ '/assets/main/ratseal.png' | url }}" alt="rat seal" id="ratseal"/>
+    <img src="{{ '/assets/main/xushou.png' | url }}" alt="xushou" id="xushou"/>
+    <img src="{{'/assets/main/kongnao.png' | url }}" alt="kongnao" id="kongnao"/>
+</div>

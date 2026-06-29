@@ -2,104 +2,81 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>首页</title>
     <link rel="stylesheet" href="/assets/style.css">
 
   </head>
   <body>
-    <div class="wrapper">
-      <div class="figure">
-        <img src="/assets/main/figure.webp" alt="mascot"/>
-      </div>
-      <div class="bulletin-frame">
-        <img src="/assets/main/bulletin-border.png" class="bulletin-border"/>
-        <div class="bulletin-content">
-          <h2>公告栏</h2>
-        </br>
-        <p>
-          To-do list</br>
-      </p>
-      <ul>
-        <li>Draw more stuffs for the site... write ideas on pratibimba</li>
-        <li>Reading log is not good enough... maybe I should make a separate page for it?</li>
-        <li>Other hobby pages, maybe the misc section should be in index.njk rather than having a single page</li>
-      </ul>
-
-    </div>
-  </div>
   <header>
     <img src="/assets/main/header.webp" alt="Header Image" class="header-image"/>
     <a href="/guest" id="guest">Sign my Guestbook!</a>
   </header>
 
   <main>
-    
-<section class="main-home">
-
     <div class="left" id="sidebar">
-        <div class="miscbox">
-            <img src="/assets/main/mainsite.GIF" alt="void-banner" style="height:88px;"/>
-            <p>
-                Likey? Feel free to link me:
-            </p>
-            <div class="code-wrapper">
-                <button class="copy-btn">Copy</button>
-                <pre class="code-block" id="code-to-copy">
-&lt;a href="https://voidhead.net/" target="_blank" rel="voidhead"&gt;
-    &lt;img src="https://voidhead.net/assets/main/mainsite.GIF" alt="voidhead.net" style="height:31px;" /&gt;
-&lt;/a&gt;
-  </pre>
-            </div>
-
-            <div class="images">
-                <img src="/assets/main/bo02h.jpg"/>
-                <img src="/assets/main/bo02j.jpg"/>
-                <img src="/assets/main/bo02m.jpg"/>
-
-                <a href="http://www.ankokukoubou.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/main/external/ankokubana.gif" alt="暗黒工房"/>
-                </a>
-                <p>放图的:</p>
-                <a href="http://pratibimba.neocities.org" target="_blank" rel="pratibimba">
-                    <img src="/assets/main/pratibimba.GIF" alt="pratibimba-banner" style="height:31px;"/>
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="center">
-
-        <div class="garden">
-            <picture>
-                <source srcset="/assets/main/garden-mob.webp" media="(max-width: 768px)">
-                <img src="/assets/main/garden.webp" alt="garden"/>
-            </picture>
-        </div>
-
-    </div>
-
-    <div class="shadow-box" id="top-menu">
+    <div class="nav">
+        <div class="nav-title"><img src="/assets/main/nav-title.png" alt="nav Image"/></div>
         <nav class="menu">
-            <a class="torn-left" href="/blog">blog</a>
-            <a class="torn-left dotted-hover" href="/dream">dream</a>
-
-            <!-- <a class="torn-left" href="/hobby">hobby</a> -->
+            <a href="/blog">♦ blog</a>
+            <a href="/dream">♦ dream</a>
+            <a href="/reading">♦ reading</a>
 
         </nav>
     </div>
 
-</section>
+    <div class="miscbox">
+        
+        
+                <p id="divider">────── ⋆⋅☆⋅⋆ ──────</p>
+
+                <p>
+                Likey? Feel free to link me:
+            </p>
+        <div class="code-wrapper">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-block" id="code-to-copy">
+&lt;a href="https://voidhead.net/" target="_blank" rel="voidhead"&gt;
+    &lt;img src="https://voidhead.net/assets/main/mainsite.GIF" alt="voidhead.net" style="height:31px;" /&gt;
+&lt;/a&gt;
+  </pre>
+        </div>
+
+        <div class="images">
+            <img src="/assets/main/bo02h.jpg"/>
+            <img src="/assets/main/bo02j.jpg"/>
+            <img src="/assets/main/bo02m.jpg"/>
+
+            <a href="http://www.ankokukoubou.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/main/external/ankokubana.gif" alt="暗黒工房"/>
+            </a>
+            <p>stamps!</p>
+            <img src="/assets/main/mainsite.GIF" alt="void-banner" style="height:31px;"/>
+            <a href="http://pratibimba.neocities.org" target="_blank" rel="pratibimba">
+                <img src="/assets/main/pratibimba.GIF" alt="pratibimba-banner" style="height:31px;"/>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<div class="center">
+
+    <div class="garden">
+        <picture>
+            <img src="/assets/main/garden-mob.webp" alt="garden" id="garden"/>
+        </picture>
+    </div>
+
+    <img src="/assets/main/ratseal.png" alt="rat seal" id="ratseal"/>
+    <img src="/assets/main/xushou.png" alt="xushou" id="xushou"/>
+    <img src="/assets/main/kongnao.png" alt="kongnao" id="kongnao"/>
+</div>
   </main>
 
   <footer>
     <small>placeholder for counter?</small>
   </footer>
-
-  <img src="/assets/main/ratseal.png" alt="rat seal" id="ratseal"/>
-  <img src="/assets/main/xushou.png" alt="xushou" id="xushou"/>
-  <img src="/assets/main/kongnao.png" alt="kongnao" id="kongnao"/>
 </div>
 </body>
 

@@ -2,32 +2,12 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>{{ title or "VOIDHEAD" }}</title>
     <link rel="stylesheet" href="{{'/assets/style.css' | url }}">
 
   </head>
   <body>
-    <div class="wrapper">
-      <div class="figure">
-        <img src="{{'/assets/main/figure.webp' | url }}" alt="mascot"/>
-      </div>
-      <div class="bulletin-frame">
-        <img src="{{'/assets/main/bulletin-border.png' | url }}" class="bulletin-border"/>
-        <div class="bulletin-content">
-          <h2>公告栏</h2>
-        </br>
-        <p>
-          To-do list</br>
-      </p>
-      <ul>
-        <li>Draw more stuffs for the site... write ideas on pratibimba</li>
-        <li>Reading log is not good enough... maybe I should make a separate page for it?</li>
-        <li>Other hobby pages, maybe the misc section should be in index.njk rather than having a single page</li>
-      </ul>
-
-    </div>
-  </div>
   <header>
     <img src="{{'/assets/main/header.webp' | url }}" alt="Header Image" class="header-image"/>
     <a href="/guest" id="guest">Sign my Guestbook!</a>
@@ -40,10 +20,6 @@
   <footer>
     <small>placeholder for counter?</small>
   </footer>
-
-  <img src="{{ '/assets/main/ratseal.png' | url }}" alt="rat seal" id="ratseal"/>
-  <img src="{{ '/assets/main/xushou.png' | url }}" alt="xushou" id="xushou"/>
-  <img src="{{'/assets/main/kongnao.png' | url }}" alt="kongnao" id="kongnao"/>
 </div>
 </body>
 
