@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-ruby.min.js"></script>
     <link rel="stylesheet" href="/assets/markdown.css">
-
+    <link rel="icon" href="/assets/favicon.ico">
   </head>
   <body>
     <div class="wrapper">
@@ -339,7 +339,47 @@ pointing device</p>
 <h1>Evaluation</h1>
 <p>what is evaluation: process of assessing a system's usability, functionality, and the overall user experience</p>
 <p>and why evaluation is important： Identifying Usability Issues, Validating Design Decisions,</p>
-<h2></h2>
+<h2>Quantitative Evaluation</h2>
+<p>hypothesis-&gt;controlled experiment-&gt;data collection-&gt;statistical verification</p>
+<ul>
+<li>pros: Able to grasp the overall trend of an assignment or conversation; It can clearly demonstrate whether there is an impact and the magnitude of the impact.</li>
+<li>cons: Excessive control → Unrealistic. To conduct experiments, we must strictly control the environment (for example, forcing two people to chat in a small, dark room using specified, strange software). But this is different from the complex situations people face in reality, such as walking while talking or typing with a bunch of emojis.</li>
+</ul>
+<h3>Types of Quantitative Evaluation</h3>
+<p>A. Evaluation by Comparison (比較による評価)</p>
+<p>all extraneous variables are kept constant except for the Independent Variable. Dependent Variable (従属変数): The factor measured to observe the effect</p>
+<p>Statistical Methods: Primarily analyzed using t-test or ANOVA.</p>
+<p>B. Evaluation by Correlation (相関による評価)</p>
+<p>Analyzes data collected from natural/real-world settings (自然状態) without manipulating any experimental variables.</p>
+<p>Statistical Methods: Primarily analyzed using Regression Analysis (回帰分析).</p>
+<h3>Experimental Design Methodologies (比較による評価法)</h3>
+<ul>
+<li>Between-subjects: Different groups of participants are assigned to different experimental conditions (e.g., Group X uses Feature A; Group Y does not). <strong>Pros</strong>: No carryover effects. <strong>Cons</strong>: Requires a large sample size, individual differences can taint data. <strong>Random Assignment (無作為割当て)</strong>: Participants must be assigned to groups completely at random to balance out individual differences.</li>
+<li>Within-Subjects: The same group of participants undergoes all experimental conditions (e.g., Group X performs tasks both with and without Feature A). <strong>Pros</strong>: Eliminates individual variance; requires fewer participants. <strong>Cons</strong>: Subject to the <strong>Learning Effect</strong>. Counterbalancing (学習効果の除去): Split participants into two halves: Half 1: Condition 1 ➔ Condition 2; Half 2: Condition 2 ➔ Condition 1</li>
+</ul>
+<h3>Workflow for Comparative Evaluation</h3>
+<ol>
+<li>Define the Objective.</li>
+<li>ormulate the Hypothesis. <em>Critical Rule: Avoid subjective or ambiguous vocabulary</em> (主観の入った言葉は避ける). Instead of saying &quot;Communication becomes more lively,&quot; operationalize it into measurable behavior: &quot;The use of Feature A increases the total number of utterances compared to when it is not used.&quot;</li>
+<li>Experimental Planning. Map out the IV and DV clearly.
+IV: Presence/Absence of Feature A.
+DV: Total number of utterances, utterances per unit of time.</li>
+<li>Pilot Study</li>
+<li>Conduct Controlled Experiment.</li>
+<li>Statistical Analysis &amp; Knowledge Consolidation</li>
+</ol>
+<h3>Data Types and Statistical Analysis Methods</h3>
+<p>A. Data Classification</p>
+<ol>
+<li>Quantitative Data (量的データ): Direct objective measurements</li>
+<li>Qualitative-to-Quantitative Standardization (質的データを量的データへ): Transforming qualitative behavior into scalable, comparable numbers</li>
+</ol>
+<p>B. Representative Statistical Methods</p>
+<ul>
+<li>Comparing Means (平均値の比較): 2 Conditions ➔ t-test; 3+ Conditions ➔ ANOVA (Analysis of Variance)</li>
+<li>Comparing Proportions (割合の比較) ➔ Chi-square Test</li>
+<li>Content Analysis (内容分析) ➔ Categorize utterances based on MECE (Inter-rater reliability score ≧ 0.8)</li>
+</ul>
 
       </div>
     </br>

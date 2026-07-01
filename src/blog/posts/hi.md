@@ -205,4 +205,41 @@ sanky diagram, chord diagram, node/vertax graph
 what is evaluation: process of assessing a system's usability, functionality, and the overall user experience
 
 and why evaluation is important： Identifying Usability Issues, Validating Design Decisions,
-##
+## Quantitative Evaluation
+hypothesis->controlled experiment->data collection->statistical verification
+- pros: Able to grasp the overall trend of an assignment or conversation; It can clearly demonstrate whether there is an impact and the magnitude of the impact.
+- cons: Excessive control → Unrealistic. To conduct experiments, we must strictly control the environment (for example, forcing two people to chat in a small, dark room using specified, strange software). But this is different from the complex situations people face in reality, such as walking while talking or typing with a bunch of emojis.
+### Types of Quantitative Evaluation
+A. Evaluation by Comparison (比較による評価)
+
+all extraneous variables are kept constant except for the Independent Variable. Dependent Variable (従属変数): The factor measured to observe the effect
+
+Statistical Methods: Primarily analyzed using t-test or ANOVA.
+
+B. Evaluation by Correlation (相関による評価)
+
+Analyzes data collected from natural/real-world settings (自然状態) without manipulating any experimental variables.
+
+Statistical Methods: Primarily analyzed using Regression Analysis (回帰分析).
+### Experimental Design Methodologies (比較による評価法)
+- Between-subjects: Different groups of participants are assigned to different experimental conditions (e.g., Group X uses Feature A; Group Y does not). **Pros**: No carryover effects. **Cons**: Requires a large sample size, individual differences can taint data. **Random Assignment (無作為割当て)**: Participants must be assigned to groups completely at random to balance out individual differences.
+- Within-Subjects: The same group of participants undergoes all experimental conditions (e.g., Group X performs tasks both with and without Feature A). **Pros**: Eliminates individual variance; requires fewer participants. **Cons**: Subject to the **Learning Effect**. Counterbalancing (学習効果の除去): Split participants into two halves: Half 1: Condition 1 ➔ Condition 2; Half 2: Condition 2 ➔ Condition 1
+### Workflow for Comparative Evaluation
+1. Define the Objective.
+2. ormulate the Hypothesis. *Critical Rule: Avoid subjective or ambiguous vocabulary* (主観の入った言葉は避ける). Instead of saying "Communication becomes more lively," operationalize it into measurable behavior: "The use of Feature A increases the total number of utterances compared to when it is not used."
+3. Experimental Planning. Map out the IV and DV clearly.
+IV: Presence/Absence of Feature A.
+DV: Total number of utterances, utterances per unit of time.
+4. Pilot Study
+5. Conduct Controlled Experiment.
+6. Statistical Analysis & Knowledge Consolidation
+### Data Types and Statistical Analysis Methods
+A. Data Classification
+
+1. Quantitative Data (量的データ): Direct objective measurements
+2. Qualitative-to-Quantitative Standardization (質的データを量的データへ): Transforming qualitative behavior into scalable, comparable numbers
+
+B. Representative Statistical Methods
+- Comparing Means (平均値の比較): 2 Conditions ➔ t-test; 3+ Conditions ➔ ANOVA (Analysis of Variance)
+- Comparing Proportions (割合の比較) ➔ Chi-square Test
+- Content Analysis (内容分析) ➔ Categorize utterances based on MECE (Inter-rater reliability score ≧ 0.8)
