@@ -48,17 +48,19 @@ module.exports = function (eleventyConfig) {
     // tag页面生成
     eleventyConfig.addCollection("tagList", function (collectionApi) {
         const tagSet = new Set();
-        collectionApi.getAll().forEach(item => {
-            (item.data.tags || []).forEach(tag => {
-                if (tag !== "blog") tagSet.add(tag);
-            });
+        collectionApi.getFilteredByGlob("./src/blog/posts/*.{md,html}").forEach(item => {
+            const rawTags = [item.data.tags || []].flat(Infinity);
+        rawTags.forEach(tag => {
+            const cleanTag = String(tag).trim();
+            if (cleanTag && cleanTag !== "blog") {
+                tagSet.add(cleanTag);
+            }
         });
-        return [...tagSet];
     });
-    // archive dates
+    return [...tagSet];
+});
 
-
-
+    // for archive
     eleventyConfig.addFilter("fileModifiedTime", function (inputPath) {
         try {
             const stats = fs.statSync(inputPath);
@@ -68,8 +70,6 @@ module.exports = function (eleventyConfig) {
         }
     });
 
-
-    
 
 
 

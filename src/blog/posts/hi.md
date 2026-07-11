@@ -3,10 +3,64 @@ title: Quick Handbook for HCI
 tags: ['blog']
 date: 2026-05-01
 ---
-ok whatever
 # Brief History of Interface
 Hardware -> Programming -> End-user -> Interactive(GUI) -> VUI -> VR
 <!-- readmore -->
+# cognitive aspect
+1. What is Cognition & Why It Matters
+Cognition is what goes on in our heads when we carry out our everyday activities (thinking, remembering, learning, deciding, etc.). To understand how humans interact with technology, we must understand human capabilities and limitations. Design should maximize human performance and minimize cognitive errors.
+
+Core Cognitive Processes:
+
+- Attention (注意)
+
+- Perception (感知)
+
+- Memory (記憶)
+
+- Learning (學習)
+
+- Reading, speaking, and listening
+
+- Problem-solving, planning, reasoning, and decision-making
+2. Attention & Multitasking
+   Attention: Selecting things to concentrate on at a point in time from the mass of stimuli around us.
+   Multitasking (多任務) Reality: Humans are NOT truly good at multitasking.
+
+  It depends on whether the tasks require the same or different modalities (e.g., visual vs. auditory).
+
+  **Design Implication:**
+
+  - Information at the interface should be structured to catch users' attention when needed (e.g., flash, color, sound).
+
+  - Avoid clutter! Don't overload the visual field.
+
+3. Memory & Technology Aids
+   **Recognition is much easier than Recall**
+
+   Example: GUIs (menus, icons) rely on recognition; Command Lines rely on recall.
+
+   Technology Aids to Enhance Memory:
+
+  Externalize memory: Interfaces can store information so users don't have to keep it in their heads (e.g., history logs, autofill, bookmarks).
+
+  Provide cues: Use icons, labels, and color-coding to trigger recognition.
+
+4. Mental Models
+   Internal constructions/representations that users form of themselves, others, the environment, and the things with which they interact.
+
+   Users use mental models to predict system behavior and explain why things happen.
+
+   The Gap (溝通鴻溝):
+
+  If a user’s mental model is wrong (doesn't match the actual system design), they will make errors.
+
+  Goal of ID: Help users build a correct mental model through transparent, intuitive interface cues.
+
+  eg. MAC OSX trash can
+  
+5. How to Elicit a Mental Model
+   think-aloud； 
 # Objectives of Interface
 ## Usability goal
   - **effectiveness**: How well a system does what it is supposed to do.

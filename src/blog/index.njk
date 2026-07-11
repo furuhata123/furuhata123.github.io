@@ -40,19 +40,12 @@ title: Blog
               <span style="color:#ff006e">S</span></span></span>
         </h2>
         <ul>
-          <li>
-            <a href="{{ '/tags/translation/index.html' | url }}">Translations</a>
-          </li>
-          <li>
-            <a href="{{ '/tags/reading/index.html' | url }}">Reading</a>
-          </li>
-          <li>
-            <a href="{{ '/tags/frontend/index.html' | url }}">Frontend</a>
-          </li>
-          <li>
-            <a href="{{ '/tutorials' | url }}">Tutorials</a>
-          </li>
-        </ul>
+  {% for tag in collections.tagList %}
+    <li>
+      <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
+    </li>
+  {% endfor %}
+</ul>
       </div>
 
       <div class="links">

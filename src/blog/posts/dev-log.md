@@ -1,6 +1,6 @@
 ---
 title: Dev Log
-tags: ['blog','test']
+tags: ['blog']
 date: 2024-01-01
 ---
 ## Rules
