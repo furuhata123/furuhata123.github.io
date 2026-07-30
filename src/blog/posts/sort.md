@@ -110,8 +110,67 @@ But stuff like bubble sort, which only call itself once (Single Recursion) is a 
 - child: n=1
 - grandchild: n=2......
 
+## Merge sort
+```js
+mergesort(L){
+    // boundary
+    if(length of L = 1)
+      then return L
+    else
+      mid=length of L/2
+      lefthalf=split(L, 0, mid)
+      righthalf=split(L, mid+1, length-1)
+      sorted=mergelist(lefthalf, righthalf)
+    return sorted
+}
+mergelist(A, B)
+{
+    new list L
+    i=0, j=0
+    while(A is not empty AND B is not empty){
+        if(A[i]<=B[j])
+           then put A[i] in L, i++
+        else put B[j], j++
+    }
+
+    if(A is not empty){
+        push A to Lrear
+    }
+    if(B is not empty){
+        Push B
+    }
+    return L
+}
+
+```
+inner loop perform N times compare on a level logN tree. O(NlogN) for best, avg, worst case.
+## Quick sort
 Quick sort is recursive on both sides, so it's a binary tree.
 The height of the tree is how many pieces we cut the question into
+```js
+Quicksort(L, low, high){
+    if(low<high)
+    {
+        pivot_location=partition(L, low, high)
+        Quicksort(L, low, pivot_location)
+        Quicksort(L, pivot_location+1, high)
+    }
+}
+Partition(L, low, high){
+    pivot=L[high]
+    leftwall i=low-1
+
+    for j=low to high-1
+    {
+        if L[j]<=pivot
+         then i++
+         swap L[i] and L[j]
+    }
+
+    swap L[i+1] and A[high]
+    return i+1
+}
+```
 
 There is also... something based on graphs. If you think about Fibonacci sequence, F(5)=F(4)+F(3), F(4)=F(3)+F(2), WHERE F(3) was called twice. If we take each call as a node...(?)
 

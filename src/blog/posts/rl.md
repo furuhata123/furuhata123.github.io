@@ -1,5 +1,5 @@
 ---
-title: Notes on RL
+title: Notes on ...Cybernetics
 date: 2026-06-01
 tags: ['blog']
 ---

@@ -72,6 +72,33 @@
 <h4>驗證:</h4>
 <p>PoC（概念驗證）：在最前期的示範階段，驗證點子是否能成立;</p>
 <p>Feasibility Study（可行性研究 / FS）：在試作階段事前驗證其實現可能性</p>
+<h2>Project management</h2>
+<p>传统管理只看QCD：品質(Quality)、コスト(Cost)、納期(Delivery)</p>
+<p>PMBOK：美国PMI整理的体系，包含9个管理领域（整合、范围、时间、成本、质量、人力资源、沟通、风险、采购）</p>
+<h3>Estimation methods</h3>
+<ol>
+<li>LOC</li>
+<li>Function Point: doesn't affected by programming language. EI, EO, EQ(External Inquiry, no mathematical, no modifications on ILF), ILF(internal logical), EIF</li>
+</ol>
+<h3>Constructive cost model</h3>
+<p>初代COCOMO必须以LOC为前提。缺点是开发早期根本不可能知道行数。有3个方法（基本、中间、详细）和3个模式（Organized, embedded, semi-embedded）。COCOMO2解决了行数未知的课题，改用オブジェクトポイント或ファンクションポイント在不同阶段（应用程序组装、初期设计、ポストアーキテクチャ）进行估算</p>
+<h3>Human factors</h3>
+<ul>
+<li>Peopleware: The human element of computing. Along with hardware (physical machines) and software (programmed instructions), peopleware comprises the third fundamental pillar of technology</li>
+<li>Brooks's law: an observation about software project management that &quot;Adding manpower to a late software project makes it later.&quot;</li>
+<li>Death March: a project which participants believe to be destined for failure, or that requires a stretch of unsustainable overwork.</li>
+</ul>
+<h3>EVM (see also in note)</h3>
+<h4>WBS</h4>
+<h4>Front/back-loading</h4>
+<h3>CMMI</h3>
+<ol>
+<li>Initial: Unpredictable, reactive processes; projects are frequently over budget and delayed.Level</li>
+<li>Managed: Basic project management processes are established; work is tracked and managed at the project level.</li>
+<li>Defined: Proactive organization-wide standards and processes are documented and tailored to individual projects.</li>
+<li>Quantitatively Managed: Processes are controlled using statistical and other quantitative data.</li>
+<li>Optimizing: Processes are continually improved based on a quantitative understanding of organizational objectives.</li>
+</ol>
 </li>
 <li>
 <p>Design Phase:</p>
@@ -160,20 +187,70 @@ affect other modules in the system</p>
 <p>The point of information hiding is to keep the actions of modules from having unnecessary dependencies or effects on other modules.</p>
 <h2>components</h2>
 <p>a reusable unit of software. differences</p>
-<p>component architecture</p>
-<h1>Tools</h1>
-<p>dataflow diagram</p>
-<h2>UML</h2>
+<h2>component architecture</h2>
+<p>STRUCTURAL ANALYSIS</p>
+<h1>Object-oriented analysis</h1>
+<p>object: has attribute(state) and operations, has clear associations in the system.</p>
+<p>class: abstraction of common attributes and operations,</p>
+<p>instance: an instance is a specific object instantiated from a class, which processes its own state</p>
+<h3>Encapsulation</h3>
+<p>bundling data and the methods that operate on that data into a single unit, while restricting direct access to some of the object's components to hide internal implementation details</p>
+<h3>Inheritance</h3>
+<p>allows a new class to adopt the attributes and methods of a superclass
+generalization, specialization.</p>
+<h3>Polymorphism</h3>
+<p>different objects respond to the same method call in their own specific way</p>
+<h1>UML</h1>
+<h2>实例分析</h2>
 <h3>use case diagram</h3>
-<p>use case(interactions between system and users)</p>
-<p>actors(users)</p>
+<p>多重度：1（只有一個）0..1（零個或一個）</p>
+<p>*（任意）</p>
+<p>1..*（至少一個）</p>
+<h3>actors(users)</h3>
+<p>any entity that exsists outside of the system boundary, and intereact with the system. (primary and supporting)</p>
+<h3>include and extend</h3>
+<hr>
+<h2>activity diagram</h2>
+<ul>
+<li>fork: split</li>
+<li>join: merge multiple parallel control flows back to one synchronously, the process must wait until all parallel tasks are completed</li>
+</ul>
 <h3>class diagram</h3>
 <p>the structure of classes and relationships between classes</p>
 <p>relationships: one-to-one, one-to-many, many-to-many</p>
+<ul>
+<li>aggregation: even if the whole dissapears, some of it can still exsist</li>
+<li>composition</li>
+</ul>
 <h3>interaction diagrams: sequence diagram</h3>
 <p>depicts the communication between the individuals</p>
 <p>(such as actors, complete software components, or individual objects) that are involved in performing a task.</p>
 <p>lifeline, frame, interaction fragments</p>
+<h2></h2>
+<ol>
+<li>Structure Diagram
+クラス図：描述类、类的内部结构及类间关系。</li>
+</ol>
+<p>オブジェクト図：某个特定时间点的系统快照（实例关系）。</p>
+<p>コンポジット構造図：表现分类子的逻辑内部结构和角色（比如ATM内部构造）。</p>
+<p>パッケージ図：表现模型要素的分组和依赖关系。</p>
+<p>コンポーネント図：描述组件的构成和它们之间的物理依赖。</p>
+<p>配置図：描述硬件、执行环境等物理配置。
+2. Activity diagram
+表现系统的动态行为或状态变化。</p>
+<p>ユースケース図： 描述系统功能与外部（用户/其他系统）的关系。</p>
+<p>状態マシン図： 描述单个对象在生命周期内的状态迁移。</p>
+<p>アクティビティ図： 描述业务流程、工作流或动作的执行顺序。
+3. 相互作用図 侧重个体间传递消息
+属于行为图的子类，专门用来表现多个对象之间是如何Interact的。</p>
+<p>シーケンス図： 强调消息传递的时间顺序（上到下）。</p>
+<p>コミュニケーション図： 强调对象之间的结构化连接关系，和时序图可以互换。</p>
+<p>タイミング図： 强调状态变化与时间轴/时间限制的精确关系。</p>
+<p>相互作用概観図： 把多个时序图或通信图用活动图的控制流串起来的大局观图。</p>
+<h2>UML图与V字模型</h2>
+<p>要件定義 ──ユースケース図、アクティビティ図、class\sequence\object\components───→ 総合テスト</p>
+<p>功能設計 ──クラス図、シーケンス図、communication、deploy ─────────→ 結合テスト
+詳細設計 ──配置図、状態マシン図、 timing...─────────→ 単体テスト</p>
 <h1>Testing</h1>
 <h2>methodology</h2>
 <ul>

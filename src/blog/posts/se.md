@@ -29,8 +29,30 @@ Specification, Development, Validation, Evolution
 
    #### 驗證:
     PoC（概念驗證）：在最前期的示範階段，驗證點子是否能成立; 
-    
+
     Feasibility Study（可行性研究 / FS）：在試作階段事前驗證其實現可能性
+   ## Project management
+   传统管理只看QCD：品質(Quality)、コスト(Cost)、納期(Delivery)
+
+   PMBOK：美国PMI整理的体系，包含9个管理领域（整合、范围、时间、成本、质量、人力资源、沟通、风险、采购）
+   ### Estimation methods
+   1. LOC
+   2. Function Point: doesn't affected by programming language. EI, EO, EQ(External Inquiry, no mathematical, no modifications on ILF), ILF(internal logical), EIF
+   ### Constructive cost model
+   初代COCOMO必须以LOC为前提。缺点是开发早期根本不可能知道行数。有3个方法（基本、中间、详细）和3个模式（Organized, embedded, semi-embedded）。COCOMO2解决了行数未知的课题，改用オブジェクトポイント或ファンクションポイント在不同阶段（应用程序组装、初期设计、ポストアーキテクチャ）进行估算
+   ### Human factors
+   - Peopleware: The human element of computing. Along with hardware (physical machines) and software (programmed instructions), peopleware comprises the third fundamental pillar of technology
+   - Brooks's law: an observation about software project management that "Adding manpower to a late software project makes it later."
+   - Death March: a project which participants believe to be destined for failure, or that requires a stretch of unsustainable overwork.
+   ### EVM (see also in note)
+   #### WBS
+   #### Front/back-loading
+   ### CMMI
+   1. Initial: Unpredictable, reactive processes; projects are frequently over budget and delayed.Level 
+   2. Managed: Basic project management processes are established; work is tracked and managed at the project level.
+   3. Defined: Proactive organization-wide standards and processes are documented and tailored to individual projects.
+   4. Quantitatively Managed: Processes are controlled using statistical and other quantitative data.
+   5. Optimizing: Processes are continually improved based on a quantitative understanding of organizational objectives.
 
 2. Design Phase:
    
@@ -61,11 +83,11 @@ Specification, Development, Validation, Evolution
 
 
 ### development methdologies
-| model       | concept                                                                                                                                                           | pros | cons                                                                                                      | best applications                                                        |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| waterfall   | **Strict linear sequential flow.** Each phase must be fully completed with documentation before the next phase begins. **No backtracking**.                       |  **Structure**: Highly structured, clear, and easy to manage. **Clear Documentation**: Every stage has strict deliverables and records.    | **Inflexible**: Extremely rigid; accommodating change in requirements mid-way is very difficult. **Late Working Software**: A working product is not available until late in the lifecycle, increasing risk.           | Projects with well-defined, stable requirements and mature technologies. |
-| incremental | Splits the software into multiple **functional modules (increments)**. Each module is developed completely through the stages and delivered like building blocks. | **Early Delivery**: High-priority core software functions can be delivered early. **Lower Initial Risk**: Reduces the initial financial and time risks of the development process.     |**High Architecture Demand**: Requires a perfect top-level system architecture design to integrate later increments. **Total Cost**: Total cost might be higher than the traditional waterfall model. |Large projects where requirements are relatively clear, but phased delivery of core functions is required.                                                                          |
-| iterative   | Develops **a very rough but complete version** of the system first, then continuously enhances, refactors, and perfects it through **multiple cycles**(iterations).                                                                  |**Flexible**: Highly adaptable; allows requirements to evolve and change after each iteration. **Continuous Feedback**: Enables continuous improvement based on real user feedback.      | **Scope Creep**: Highly prone to uncontrolled expansion of requirements (scope creep). **Hard to Budget**: Difficult to estimate final costs and timelines accurately at the project's start.                                                                                                          |Modern web/startup projects where requirements are unclear, highly dynamic, or exploratory.                                                                          |
+| model       | concept                                                                                                                                                             | pros                                                                                                                                                                                | cons                                                                                                                                                                                                         | best applications                                                                                          |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| waterfall   | **Strict linear sequential flow.** Each phase must be fully completed with documentation before the next phase begins. **No backtracking**.                         | **Structure**: Highly structured, clear, and easy to manage. **Clear Documentation**: Every stage has strict deliverables and records.                                              | **Inflexible**: Extremely rigid; accommodating change in requirements mid-way is very difficult. **Late Working Software**: A working product is not available until late in the lifecycle, increasing risk. | Projects with well-defined, stable requirements and mature technologies.                                   |
+| incremental | Splits the software into multiple **functional modules (increments)**. Each module is developed completely through the stages and delivered like building blocks.   | **Early Delivery**: High-priority core software functions can be delivered early. **Lower Initial Risk**: Reduces the initial financial and time risks of the development process.  | **High Architecture Demand**: Requires a perfect top-level system architecture design to integrate later increments. **Total Cost**: Total cost might be higher than the traditional waterfall model.        | Large projects where requirements are relatively clear, but phased delivery of core functions is required. |
+| iterative   | Develops **a very rough but complete version** of the system first, then continuously enhances, refactors, and perfects it through **multiple cycles**(iterations). | **Flexible**: Highly adaptable; allows requirements to evolve and change after each iteration. **Continuous Feedback**: Enables continuous improvement based on real user feedback. | **Scope Creep**: Highly prone to uncontrolled expansion of requirements (scope creep). **Hard to Budget**: Difficult to estimate final costs and timelines accurately at the project's start.                | Modern web/startup projects where requirements are unclear, highly dynamic, or exploratory.                |
 
 also there is agile method, It completely abandons the heavy documentation and rigid planning of Waterfall. It focuses on flexibility, rapid responses to changing requirements, and close collaboration with users through very short development cycles (sprints).
 
@@ -96,24 +118,90 @@ The point of information hiding is to keep the actions of modules from having un
 a reusable unit of software. differences
 
 component architecture 
+---
+STRUCTURAL ANALYSIS     
 
-# Tools
- dataflow diagram
- ## UML
+# Object-oriented analysis
+object: has attribute(state) and operations, has clear associations in the system.
+
+class: abstraction of common attributes and operations, 
+
+instance: an instance is a specific object instantiated from a class, which processes its own state
+### Encapsulation
+bundling data and the methods that operate on that data into a single unit, while restricting direct access to some of the object's components to hide internal implementation details
+### Inheritance
+allows a new class to adopt the attributes and methods of a superclass
+generalization, specialization.
+### Polymorphism
+different objects respond to the same method call in their own specific way
+
+# UML
+## 实例分析
  ### use case diagram
- use case(interactions between system and users)
+ 多重度：1（只有一個）0..1（零個或一個）
 
- actors(users)
- ### class diagram
+ *（任意）
+
+ 1..*（至少一個）
+### actors(users)
+any entity that exsists outside of the system boundary, and intereact with the system. (primary and supporting)
+### include and extend
+---
+
+## activity diagram
+- fork: split
+- join: merge multiple parallel control flows back to one synchronously, the process must wait until all parallel tasks are completed
+  
+### class diagram
  the structure of classes and relationships between classes 
 
  relationships: one-to-one, one-to-many, many-to-many 
+ - aggregation: even if the whole dissapears, some of it can still exsist
+ - composition
+ 
  ### interaction diagrams: sequence diagram
  depicts the communication between the individuals
 
 (such as actors, complete software components, or individual objects) that are involved in performing a task.
 
  lifeline, frame, interaction fragments
+ ## 
+1. Structure Diagram
+クラス図：描述类、类的内部结构及类间关系。
+
+オブジェクト図：某个特定时间点的系统快照（实例关系）。
+
+コンポジット構造図：表现分类子的逻辑内部结构和角色（比如ATM内部构造）。
+
+パッケージ図：表现模型要素的分组和依赖关系。
+
+コンポーネント図：描述组件的构成和它们之间的物理依赖。
+
+配置図：描述硬件、执行环境等物理配置。
+2. Activity diagram
+表现系统的动态行为或状态变化。
+
+ユースケース図： 描述系统功能与外部（用户/其他系统）的关系。
+
+状態マシン図： 描述单个对象在生命周期内的状态迁移。
+
+アクティビティ図： 描述业务流程、工作流或动作的执行顺序。
+3. 相互作用図 侧重个体间传递消息
+属于行为图的子类，专门用来表现多个对象之间是如何Interact的。
+
+シーケンス図： 强调消息传递的时间顺序（上到下）。
+
+コミュニケーション図： 强调对象之间的结构化连接关系，和时序图可以互换。
+
+タイミング図： 强调状态变化与时间轴/时间限制的精确关系。
+
+相互作用概観図： 把多个时序图或通信图用活动图的控制流串起来的大局观图。
+## UML图与V字模型
+要件定義 ──ユースケース図、アクティビティ図、class\sequence\object\components───→ 総合テスト
+
+ 功能設計 ──クラス図、シーケンス図、communication、deploy ─────────→ 結合テスト
+ 詳細設計 ──配置図、状態マシン図、 timing...─────────→ 単体テスト
+
 # Testing
 ## methodology
 - glass-box testing
