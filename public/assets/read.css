@@ -23,6 +23,9 @@ body{
     color: #493D3A; 
     font-family: 'Times New Roman', serif;
 }
+#content{
+    background-color: #e7dacb50;
+}
 #header{
     font-family: "antique", Georgia, serif;
     font-size: large;
@@ -76,7 +79,7 @@ body{
 }
 #now-list li,#to-list li{
     display: flex;
-    justify-content: center;
+
     
 }
 
