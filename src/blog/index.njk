@@ -43,6 +43,7 @@ title: Blog
   {% for tag in collections.tagList %}
     <li>
       <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
+      <span class="tag-count">({{ collections[tag] | length }})</span>
     </li>
   {% endfor %}
 </ul>

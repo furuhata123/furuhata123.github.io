@@ -1,0 +1,49 @@
+---
+title: Hobby
+layout: read.njk
+currentTab: articles
+permalink: /hobby/articles/
+---
+    <div id="diary">
+        {% for post in collections.hobbyPosts | reverse %}
+            {% if "hidden" in post.data.tags %}
+                <div class="post" style="display:none;"></div>
+            {% else %}
+                <div class="post">
+                    <a class="post-title" href="{{ post.url | url }}" data-modal="true">{{ post.data.title }}</a>
+
+                    <small>
+                        {{ post.date | date("yyyy-MM-dd") }}
+                    </small>
+                </br>
+                {% if "showall" in post.data.tags %}
+                    <div class="post-content-full">
+                        {{ post.templateContent | safe }}
+                    </div>
+                {% else %}
+
+                    <div class="post-content">
+
+                        <div class="cover">
+                            <img src="{{ post.data.cover }}" alt="封面" class="cover-img">
+                        </div>
+                        <p>
+                            <div id="excerpt">{{ post.data.page.excerpt }}            &nbsp;
+                                    <span id="readmore">
+                                    <a href="{{ post.url | url }}" data-modal="true">
+                                            READ MORE
+                                        </a>
+                                </span>
+                            </div>
+                            <!--excerpt-->
+                        </p>
+                    </div>
+                    <!-- post content -->
+                {% endif %}
+            </div>
+            <!--post-->
+        {% endif %}
+
+    {% endfor %}
+</div>
+<!--diary-->

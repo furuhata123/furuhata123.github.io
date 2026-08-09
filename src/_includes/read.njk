@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="UTF-8"/>
+    <head>
+        <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>{{ title or "VOIDHEAD" }}</title>
-    <link rel="icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="{{'/assets/onemain.css' | url }}">
-    <link rel="stylesheet" href="{{'/assets/read.css' | url }}">
-  </head>
+        <title>{{ title or "VOIDHEAD" }}</title>
+        <link rel="icon" href="/assets/favicon.ico">
+        <link rel="stylesheet" href="{{'/assets/onemain.css' | url }}">
+        <link rel="stylesheet" href="{{'/assets/read.css' | url }}">
+    </head>
 
     <body>
         <main>
@@ -15,9 +15,100 @@
                 <h1>{{ title }}</h1>
             </div>
 
-            <div id="content">
-                {{ content | safe }}
+            <div id="main-content">
+                <div id="content">
+                    {{ content | safe }}
+                </div>
+
+                <aside class="sidebar">
+
+                    <div class="tabs">
+                        <a href="{{ '/hobby/articles/' | url }}" class="tab-btn {% if currentTab == 'articles' %}active{% endif %}">Articles</a>
+                        <a href="{{ '/hobby/' | url }}" class="tab-btn {% if currentTab == 'logs' %}active{% endif %}">Logs</a>
+                    </div>
+
+                    <div class="profile">
+                        <div class="avatar">...</div>
+                        <p>Welcome to my corner!</p>
+                    </div>
+
+                    <div class="widget widget-index">
+                        {% if currentTab == 'articles' %}
+                            <h3>Map / Index</h3>
+                            <div class="map">
+                                <img src="{{'/assets/main/m.png' |url}}" id="map">
+                            </div>
+
+                            <div class="catalog">
+                                {% set categories = [
+                                    {
+                                        name: "Games",
+                                        collection: collections.game,
+                                        tag: "game"
+                                    }, {
+                                        name: "Plastic Models",
+                                        collection: collections.model,
+                                        tag: "model"
+                                    }
+                                ] %}
+
+                                <div class="catalog-title">
+
+                                    {% for cat in categories %}
+                                        <p>{{ cat.name }}</p>
+
+                                        {% for post in cat.collection | reverse %}
+                                            {% if cat.tag in post.data.tags %}
+
+                                                <a href="{{ post.url | url }}" data-modal="true">{{ post.data.title }}</a>
+
+                                            {% endif %}
+                                        {% endfor %}
+
+                                    {% endfor %}
+
+                                </div>
+
+                            </div>
+
+                        {% elif currentTab == 'logs' %}
+                            <h3>Tags</h3>
+                            <ul class="tag-list">
+                                {% for tag in collections.tagList %}
+                                    {% set currentCollection = collections[tag] %}
+                                    <li>
+                                        <a href="/tags/{{ tag | slugify }}/">#{{ tag }}</a>
+                                        <span class="tag-count">({{ currentCollection | length }})</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                        {% endif %}
+                    </div>
+
+                </aside>
             </div>
         </main>
+
+        <div class="back-top">
+    <a id="back-top" href="#top">
+        <img src="/assets/read/chair.png" alt="Back to Top" class="back-to-top" />
+        <p>▲ Top</p>
+    </a>
+</div>
+
+<div class="back-home">
+    <a id="back-home" href="/">
+        <img src="/assets/read/phone.png" alt="Back to home" class="back-to-home" />
+        <p>Back Home..</p>
+    </a>
+</div>
+
+<div class="back-top-mob">
+    <a id="back-top-mob" href="#top">
+        <p>  &nbsp;▲ </p>
+        <p id="pink">Top</p>
+    </a>
+</div>
     </body>
 </html>

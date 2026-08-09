@@ -126,7 +126,7 @@ body {
     max-width: 960px;
     box-sizing: border-box;
     margin: 2em auto;
-    gap: 2em;
+    gap: 0.5em;
 
 }
 
@@ -190,22 +190,16 @@ a {
 
 .tags ul li {
     display: inline-block;
+    padding: 4px 10px;
 }
 
 .tags a {
     width: fit-content;
-    background-color: #ffffff;
-    border: 2px solid;
-    border-color: aquamarine aquamarine #00bea8 ;
-    border-radius: 2px;
-    padding: 4px 10px;
     display: inline-block;
-    margin: 4px;
     text-decoration: none;
 }
-.tags a:hover{
+.tags ul li:hover{
     color: #ff90a4;
-    border-color: #08aa98 aquamarine aquamarine;
     transform: translateY(-2px);
     transition: all 0.2s ease;
 }

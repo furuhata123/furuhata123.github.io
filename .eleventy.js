@@ -70,6 +70,13 @@ module.exports = function (eleventyConfig) {
         }
     });
 
+    // hobby posts
+    eleventyConfig.addCollection("hobbyPosts", function(collectionApi) {
+        return collectionApi.getAll().filter(item => {
+          return item.inputPath && item.inputPath.includes("/hobby/posts/");
+        });
+      });
+
 
 
 
