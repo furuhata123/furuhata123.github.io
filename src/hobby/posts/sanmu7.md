@@ -1,6 +1,6 @@
 ---
 title: 真三国无双系列回顾
-tags: ["blog", "hidden","game"]
+tags: ["hidden","game"]
 game_info:
   版本: 猛将传中文版，帝国日文版
   发售年: |

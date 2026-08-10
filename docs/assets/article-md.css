@@ -1,0 +1,236 @@
+body{
+    font-family: 'Times New Roman', serif;
+}
+.game-meta-box {
+    background-color: #2d3029; 
+    border: 1px solid #5b694f; 
+    border-radius: 2px;
+    margin: 1.5em 0;
+    font-size: 0.95rem;
+    border-radius: 4px;
+
+    max-width: 80%;
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    padding: 8px 12px;
+    border-bottom: 1px dashed #333; 
+}
+.meta-item:last-child {
+    border-bottom: none; 
+}
+.meta-item:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+.label {
+    color: #888; 
+    font-size: large;
+    flex-shrink: 0;
+    margin-right: 20px;
+    letter-spacing: 1px;
+}
+
+.value {
+    color: #ccc;
+    text-align: left;
+    white-space: pre-line; 
+    line-height: 1.6;
+}
+
+#title{
+    font-size: 2em;
+    color:#658f6e;
+    text-decoration: none;
+}
+#title:hover{
+    color:#c1caa6; 
+}
+
+.post-content h2, .post-content h3 {
+    color: #a68b6d; 
+    border-left: 4px solid #4a5d4e;
+    padding-left: 12px;
+    margin-top: 2em;
+}
+
+.post-content blockquote {
+    background: rgba(74, 93, 78, 0.05);
+    border-left: 2px solid #685238;
+    color: #8c8175;
+    font-style: italic;
+    padding: 10px 20px;
+}
+/* 基础共用样式 */
+.wiki-notice {
+    margin: 2em 0;
+    padding: 1.2em 1.5em;
+    border: 1px solid #3d352d;
+    border-left: 5px solid #685238;
+    background: rgba(104, 82, 56, 0.03);
+    color: #b0a496;
+    }
+    
+
+/* ::: notice warning */
+.wiki-notice.warning {
+    border-color: #5d3a3a;
+    border-left-color: #8c4646;
+    background: rgba(140, 70, 70, 0.05);
+}
+
+
+
+/* ::: notice build */
+.wiki-notice.build {
+    border-color: #3a4d3f;
+    border-left-color: #4a5d4e;
+    background: rgba(74, 93, 78, 0.05);
+}
+
+/* ::: notice info */
+.wiki-notice.info {
+    border-color: #2d353d;
+    border-left-color: #4a5a68;
+    background: rgba(74, 90, 104, 0.05);
+}
+
+.post-content blockquote:has(text:contains("🦉")),
+.post-content blockquote:has(text:contains("🌿")) {
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(104, 82, 56, 0.02) 0px,
+        rgba(104, 82, 56, 0.02) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+.post-content a {
+    color: #7d8c72; 
+    text-decoration: underline dotted;
+    transition: color 0.3s;
+}
+
+.post-content a:hover {
+    color: #685238; 
+}
+
+.post-content summary{
+    color:#685238;
+    cursor: pointer;
+}
+
+.post-content img{
+    display: block;
+    justify-self: center;
+    max-width: 70%;
+}
+
+.post-content p{
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.post-content center{
+    font-size: 0.9rem;
+    color:#7d8c72;
+}
+
+/* modal */
+#content {
+    background-color: #2d2620; 
+    color: #d1c7bc; 
+    line-height: 1.7;
+    padding: 30px;
+    font-family: 'Georgia', serif;
+}
+#content h1, #content h2, #content h3 {
+    color: #e8e2d5;
+    border-bottom: 1px solid #685238; 
+    padding-bottom: 0.3em;
+    margin-top: 1.5em;
+}
+#content a {
+    color: #a3b899;
+    text-decoration: none;
+    border-bottom: 1px dashed #685238;
+    transition: all 0.3s;
+}
+#content a:hover {
+    color: #f9f7f2;
+    background-color: #685238;
+}
+#content blockquote {
+    margin: 1.5em 0;
+    padding: 0.5em 1.5em;
+    color: #b0a496;
+    border-left: 4px solid #685238;
+    background: rgba(104, 82, 56, 0.1);
+    font-style: italic;
+}
+#content code, pre {
+    background-color: #3d352d;
+    color: #c5d1b7;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+#content ul {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+#content ul li::before {
+    content: "✿";
+    margin-right: 8px;
+    font-size: 0.8em;
+    color: #685238;
+}
+
+#content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5em 0;
+    background-color: #1a1f1a; 
+    border: 1px solid #3a4d3f; 
+    border-radius: 2px;
+    overflow: hidden;
+    font-size: 0.95em;
+}
+
+#content th {
+    background-color: #263329;
+    color: #a3b899;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #3a4d3f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#content td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #242b24;
+    color: #b0baad;
+}
+
+#content tr:nth-child(even) {
+    background-color: rgba(58, 77, 63, 0.15);
+}
+
+#content tr:hover td {
+    background-color: rgba(163, 184, 153, 0.05); 
+    color: #f9f7f2;
+}
+
+#content td code {
+    background-color: #0d110d; 
+    color: #81a17b;
+    border: 1px solid #2d352d;
+}
+#content::-webkit-scrollbar { width: 6px; }
+#content::-webkit-scrollbar-thumb { background: #685238; border-radius: 10px; }

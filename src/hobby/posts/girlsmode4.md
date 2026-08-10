@@ -1,7 +1,7 @@
 ---
 title: 女生风格4（Style Boutique 3 Styling Star）感想
 cover: "/assets/games/sb4/menw.jpg"
-tags: ["blog", "game"]
+tags: ["game"]
 game_info:
   版本: EU/民间汉化
   平台: 3DS

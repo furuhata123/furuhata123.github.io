@@ -1,0 +1,68 @@
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family:  'Times New Roman', sans-serif;
+}
+
+body{
+    background-image: url("/assets/games/b5-126.gif");
+    position: relative;
+    color: #d1c7bc; 
+    
+
+}
+
+#back{
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    margin:0;
+    top:0;
+
+    border-radius: 0 0 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    
+}
+#back a{
+    color: #000;
+}
+#back a:hover{
+    color:#d1c7bc;
+}
+#content{
+    flex:1;
+    background-color: #1a1612; 
+    padding: 2rem;
+    height: fit-content;
+
+    max-width: 800px;
+    margin: 0 auto;
+
+    padding: 40px;
+
+    font-family: "Times New Roman", Times, sans-serif;
+    font-size: 1.3em;
+}
+#content img{
+    display: block;
+    margin: 0 auto;
+    line-height: 1.8;
+    max-width: 700px;
+}
+center{
+    font-size: 0.8em;
+    color:burlywood;
+}
+h1 {
+    border-bottom: none !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}

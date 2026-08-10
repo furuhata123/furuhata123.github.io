@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{{ '/assets/article-md.css' | url }}">
+        <link rel="stylesheet" href="{{ '/assets/article.css' | url }}">
+    </head>
+    <body>
+
+        <div id="content">
+            <h1>{{ title }}</h1>
+            <div id="divider">
+                <img src="/assets/games/line-owl.gif" alt="divider"> 
+            </div>
+            
+            {% if game_info %}
+                <div>
+                    <table>
+                        <tbody>
+                            {% if game_info.版本 %}
+                                <tr>
+                                    <td class="table-label">版本</td>
+                                    <td>{{ game_info.版本 }}</td>
+                                </tr>
+                            {% endif %}
+
+                            {% if game_info.发售年 %}
+                                <tr>
+                                    <td class="table-label">发售年</td>
+                                    <td class="table-years">{{ game_info.发售年 | string | nl2br | safe }}</td>
+                                </tr>
+                            {% endif %}
+
+                            {% if game_info.平台 %}
+                    <tr>
+                        <td class="table-label">平台</td>
+                        <td class="table-platform">{{ game_info.平台 }}</td>
+                    </tr>
+                {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+            
+            {{ content | safe }}
+        </div>
+    </body>
+</html>

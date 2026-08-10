@@ -1,42 +1,32 @@
 ---
+pagination:
+  data: collections.hobbyTagList
+  size: 1
+  alias: currentTag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - log
+permalink: /hobby/tags/{{ currentTag | slugify }}/index.html
 layout: read.njk
-title: Log!
-currentTab: logs
-permalink: /hobby/
 ---
 <div class="motto">
     <p id="motto">Il faut être absolument moderne. <br>One must be absolutely modern.</p>
 </div>
 
-<a id="top"></a>
-<div class="bulletin">
-    <div class="now-reading">
-        <p id="now-reading">✦ Now </p>
-        <ol id="now-list">
-            <li>sample1</li>
-            <li>sample2</li>
-        </ol>
-    </div>
-
-    <div class="to-read">
-        <p id="to-read">✦ To </p>
-        <ol id="to-list">
-            <li>sample1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>sample2</li>
-            <li>sample3</li>
-            <li>sample3</li>
-        </ol>
-    </div>
-</div>
-
 <img src="/assets/read/line23.gif" alt="Devider" class="devider" />
 
+<h1>TAGS: <span class="highlight">#{{ currentTag }}</span></h1>
+
+{% set tagPosts = collections[currentTag] %}
 <ul id="post-list">
-    {% for post in collections.log | reverse %}
+{% for post in tagPosts %}
+    {% if "hobby/logs/" in post.inputPath %}
         <li>
             <div class="post-log">
-                
-                <div class="cover">
+            <div class="cover">
                     {% if post.data.cover %}
                         <img src="{{ post.data.cover }}" alt="Cover for {{ post.data.title }}" class="post-cover" loading="lazy" />
                     {% else %}
@@ -47,18 +37,14 @@ permalink: /hobby/
             <div class="info">
                 <div class="title">
                 <p id="title">{{ post.data.title }}</p>
-                <!--
-                <small>
-                    {{ post.date | date("yyyy-MM-dd") }}
-                </small>
                 </div>
-                -->
-                <div class="author">
-                    {% if post.data.author %}
-                        <p id="author">By: {{ post.data.author }}</p>
-                    {% endif %}
 
-                <div class="tags">
+            <div class="author">
+                {% if post.data.author %}
+                    <p id="author">By: {{ post.data.author }}</p>
+                {% endif %}
+            </div>
+            <div class="tags">
                 <p class="post-tags">
                 Tags: &nbsp;
                         {% if post.data.tags %}
@@ -72,15 +58,16 @@ permalink: /hobby/
                         <span class="no-tag">No tags</span>
                     {% endif %}
                 </p>
-                </div>
+            </div>
 
             <div class="content">
                 <div id="content">{{ post.templateContent | safe }}
                 </div>
             </div>
-        </div>
-            
+            </div>
         </li>
-    {% endfor %}
+    {% endif %}
+{% else %}
+    <p>这个标签下暂时还没有日志哦~(＞人＜;)</p>
+{% endfor %}
 </ul>
-

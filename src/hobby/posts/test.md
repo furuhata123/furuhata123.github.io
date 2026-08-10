@@ -1,6 +1,6 @@
 ---
 title: Style testing
-tags: blog,showall
+tags: showall
 
 game_info:
   发售年: 2015

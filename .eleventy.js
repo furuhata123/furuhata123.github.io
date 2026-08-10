@@ -3,7 +3,6 @@ const path = require("path");
 const fs = require("fs");
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
-    eleventyConfig.addPassthroughCopy("src/assets");
 
     eleventyConfig.addCollection("blog", function (collectionApi) {
         return collectionApi.getFilteredByTag("blog");
@@ -29,7 +28,7 @@ module.exports = function (eleventyConfig) {
             }
         }
     });*/
-    eleventyConfig.addFilter("get_excerpt", function(content) {
+    eleventyConfig.addFilter("get_excerpt", function (content) {
         const separator = "<!-- readmore -->";
         if (content && content.includes(separator)) {
             return content.split(separator)[0];
@@ -50,15 +49,31 @@ module.exports = function (eleventyConfig) {
         const tagSet = new Set();
         collectionApi.getFilteredByGlob("./src/blog/posts/*.{md,html}").forEach(item => {
             const rawTags = [item.data.tags || []].flat(Infinity);
-        rawTags.forEach(tag => {
-            const cleanTag = String(tag).trim();
-            if (cleanTag && cleanTag !== "blog") {
-                tagSet.add(cleanTag);
-            }
+            rawTags.forEach(tag => {
+                const cleanTag = String(tag).trim();
+                if (cleanTag && cleanTag !== "blog") {
+                    tagSet.add(cleanTag);
+                }
+            });
         });
+        return [...tagSet];
     });
-    return [...tagSet];
-});
+    // hobby tag list
+    eleventyConfig.addCollection("hobbyTagList", function (collectionApi) {
+        const tagSet = new Set();
+        collectionApi.getFilteredByGlob("src/hobby/logs/**/*.{md,html}").forEach(item => {
+            
+
+            const rawTags = [item.data.tags || []].flat(Infinity);
+            rawTags.forEach(tag => {
+                const cleanTag = String(tag).trim();
+                if (cleanTag && cleanTag !== "log") {
+                    tagSet.add(cleanTag);
+                }
+            });
+        });
+        return [...tagSet];
+    });
 
     // for archive
     eleventyConfig.addFilter("fileModifiedTime", function (inputPath) {
@@ -71,15 +86,11 @@ module.exports = function (eleventyConfig) {
     });
 
     // hobby posts
-    eleventyConfig.addCollection("hobbyPosts", function(collectionApi) {
+    eleventyConfig.addCollection("hobbyPosts", function (collectionApi) {
         return collectionApi.getAll().filter(item => {
-          return item.inputPath && item.inputPath.includes("/hobby/posts/");
+            return item.inputPath && item.inputPath.includes("/hobby/posts/");
         });
-      });
-
-
-
-
+    });
 
     return {
         pathPrefix: "/",

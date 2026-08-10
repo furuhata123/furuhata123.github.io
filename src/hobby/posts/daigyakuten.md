@@ -1,6 +1,6 @@
 ---
 title: 逆转裁判系列
-tags: ["blog", "hidden","game"]
+tags: ["hidden","game"]
 game_info:
   
   版本: 中/日版

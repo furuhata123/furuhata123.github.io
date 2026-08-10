@@ -1,11 +1,11 @@
 ---
 title: 創彩少女グランデスケールドレスアップボディ　with　轟雷
-tags: ["blog","showall", "model"]
+tags: ["showall", "model"]
 ---
 這次來玩創彩少女大比例素體（轟雷頭部）
 
 主要部分為運動服與内衣素體各一+轟雷頭部（還附帶了イノセンティア的馬尾貓耳）
-![xd](/hobby/assets/models/sosai1.jpg "xd")
+![xd](/assets/models/sosai1.jpg "xd")
 全部部件是兩種替換襪子小腿+一雙白色運動鞋（不得不説很有用<div style="text-decoration:line-through;display:inline-block;">畢竟這種小比例鞋子超貴的</div>，白色比黑色方便改色
 
 最右邊是イノセンティア套件内的肉色小腿，可以看出FAG系列素體比創彩大一圈~（伏筆

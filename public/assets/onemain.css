@@ -56,3 +56,13 @@ aside{
     min-width: 220px;
     max-width: 250px;
 }
+
+@media screen and (max-width: 768px) {
+    body{
+        width:100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    
+}

@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <a id="top"></a>
         <main>
             <div id="header">
                 <h1>{{ title }}</h1>
@@ -28,16 +29,15 @@
                     </div>
 
                     <div class="profile">
-                        <div class="avatar">...</div>
+                        <div class="avatar">
+                            <img src="{{'/assets/read/avatar.png' |url}}" id="avatar">
+                        </div>
                         <p>Welcome to my corner!</p>
                     </div>
 
-                    <div class="widget widget-index">
+                    <div class="index">
                         {% if currentTab == 'articles' %}
-                            <h3>Map / Index</h3>
-                            <div class="map">
-                                <img src="{{'/assets/main/m.png' |url}}" id="map">
-                            </div>
+                            <h2>Map / Index</h2>
 
                             <div class="catalog">
                                 {% set categories = [
@@ -72,13 +72,14 @@
                             </div>
 
                         {% elif currentTab == 'logs' %}
-                            <h3>Tags</h3>
+                            <h2>Tags</h2>
                             <ul class="tag-list">
-                                {% for tag in collections.tagList %}
-                                    {% set currentCollection = collections[tag] %}
+                                {% for tag in collections.hobbyTagList %}
+                                    {% set tagItems = collections[tag] or[] %}
                                     <li>
-                                        <a href="/tags/{{ tag | slugify }}/">#{{ tag }}</a>
-                                        <span class="tag-count">({{ currentCollection | length }})</span>
+                                        
+                                        <a href="/hobby/tags/{{ tag | slugify }}/">#{{ tag }}</a>
+                                        <span class="tag-count">({{ tagItems | length }})</span>
                                     </li>
                                 {% endfor %}
                             </ul>
@@ -91,24 +92,24 @@
         </main>
 
         <div class="back-top">
-    <a id="back-top" href="#top">
-        <img src="/assets/read/chair.png" alt="Back to Top" class="back-to-top" />
-        <p>▲ Top</p>
-    </a>
-</div>
+            <a id="back-top" href="#top">
+                <img src="/assets/read/chair.png" alt="Back to Top" class="back-to-top"/>
+                <p>▲ Top</p>
+            </a>
+        </div>
 
-<div class="back-home">
-    <a id="back-home" href="/">
-        <img src="/assets/read/phone.png" alt="Back to home" class="back-to-home" />
-        <p>Back Home..</p>
-    </a>
-</div>
+        <div class="back-home">
+            <a id="back-home" href="/">
+                <img src="/assets/read/phone.png" alt="Back to home" class="back-to-home"/>
+                <p>Back Home..</p>
+            </a>
+        </div>
 
-<div class="back-top-mob">
-    <a id="back-top-mob" href="#top">
-        <p>  &nbsp;▲ </p>
-        <p id="pink">Top</p>
-    </a>
-</div>
+        <div class="back-top-mob">
+            <a id="back-top-mob" href="#top">
+                <p>  &nbsp;▲ </p>
+                <p id="pink">Top</p>
+            </a>
+        </div>
     </body>
 </html>
