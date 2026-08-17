@@ -4,6 +4,8 @@ tags: ['log','fiction','horror']
 cover: "https://upload.wikimedia.org/wikipedia/en/5/5d/Penpal_cover_Auerbach.jpg"
 author: Dathan Auerbach
 ---
+★★★★☆
+
 I have a deep affection for horror stories devoid of supernatural elements, the true form of horror lies in the subtle, microscopic-level details, and *Penpal* does a great job capturing this in its opening chapters. For the most part, the narrative progresses without any overt, "real" conflict until the final chapter, which, in my opinion, stands as the book's major flaw. 
 
 <br>

@@ -43,6 +43,7 @@ module.exports = function (eleventyConfig) {
         }
         return DateTime.fromJSDate(value, { zone: "utc" }).toFormat(format);
     });
+    
 
     // tag页面生成
     eleventyConfig.addCollection("tagList", function (collectionApi) {
@@ -62,7 +63,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("hobbyTagList", function (collectionApi) {
         const tagSet = new Set();
         collectionApi.getFilteredByGlob("src/hobby/logs/**/*.{md,html}").forEach(item => {
-            
+
 
             const rawTags = [item.data.tags || []].flat(Infinity);
             rawTags.forEach(tag => {

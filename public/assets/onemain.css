@@ -56,6 +56,11 @@ aside{
     min-width: 220px;
     max-width: 250px;
 }
+.post-content-full {
+    line-height: 1.8;
+    max-width: 500px;
+}
+
 
 @media screen and (max-width: 768px) {
     body{

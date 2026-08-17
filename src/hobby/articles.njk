@@ -5,7 +5,7 @@ currentTab: articles
 permalink: /hobby/articles/
 ---
     <div id="diary">
-        {% for post in collections.hobbyPosts | reverse %}
+        {% for post in collections.hobbyPosts %}
             {% if "hidden" in post.data.tags %}
                 <div class="post" style="display:none;"></div>
             {% else %}
